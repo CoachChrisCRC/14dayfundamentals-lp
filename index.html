@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>THE 14-DAY FUNDAMENTALS | Body Software Update</title>
-    <!-- Load Tailwind CSS -->
+    
+    <meta name="description" content="Fix your fitness foundation in 14 days. A minimalist coached reset for busy trainees dealing with 'rusty' joints and plateaus.">
+    <meta property="og:title" content="14-Day Fundamentals | Coach Chris">
+    <meta property="og:description" content="Stop building on a cracked foundation. Join the 14-day reset.">
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
@@ -106,11 +110,9 @@
 </head>
 <body class="text-white antialiased">
 
-    <!-- Background Decoration -->
     <div class="bg-blob top-[-10%] left-[-10%]"></div>
     <div class="bg-blob bottom-[10%] right-[-5%]" style="background: radial-gradient(circle, rgba(135, 174, 115, 0.1) 0%, rgba(0, 0, 0, 0) 70%);"></div>
 
-    <!-- Header & Navigation -->
     <header class="sticky top-0 z-50 header-glass p-4">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
             <div class="text-left leading-none">
@@ -135,7 +137,6 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section class="min-h-[85vh] flex flex-col items-start justify-center px-4 sm:px-6 py-20">
         <div class="max-w-6xl mx-auto w-full">
             <h1 class="text-5xl sm:text-6xl md:text-8xl font-black leading-[0.9] mb-10 uppercase max-w-5xl tracking-tighter">
@@ -148,7 +149,6 @@
     </section>
     
     <main>
-        <!-- Reality Check -->
         <section class="py-24 px-4 sm:px-6 relative overflow-hidden">
             <div class="max-w-6xl mx-auto glass-card-light rounded-[2.5rem] p-12 sm:p-20 text-black">
                 <h2 class="text-4xl sm:text-5xl font-black uppercase tracking-tighter max-w-4xl mb-8">
@@ -165,7 +165,6 @@
             </div>
         </section>
 
-        <!-- Pillars Section -->
         <section id="pillars" class="py-24 px-4 sm:px-6">
             <div class="max-w-6xl mx-auto">
                 <div class="mb-20">
@@ -176,7 +175,6 @@
                 </div>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <!-- Pillar 1 -->
                     <div class="glass-card p-10 rounded-3xl group hover:border-brand-sage/50 transition-all duration-500">
                         <div class="w-12 h-12 rounded-full bg-brand-sage/20 flex items-center justify-center mb-6 text-brand-sage font-black text-xl">1</div>
                         <h3 class="font-black text-2xl uppercase mb-2">Joint Maintenance</h3>
@@ -184,7 +182,6 @@
                         <p class="text-lg text-neutral-400 leading-relaxed">We focus on getting your hips, back, and shoulders functioning properly again. Think of this as reinforcing the frame so you can handle a heavier load without that nagging morning stiffness.</p>
                     </div>
 
-                    <!-- Pillar 2 -->
                     <div class="glass-card p-10 rounded-3xl group hover:border-brand-sage/50 transition-all duration-500">
                         <div class="w-12 h-12 rounded-full bg-brand-sage/20 flex items-center justify-center mb-6 text-brand-sage font-black text-xl">2</div>
                         <h3 class="font-black text-2xl uppercase mb-2">Metabolic Grounding</h3>
@@ -192,7 +189,6 @@
                         <p class="text-lg text-neutral-400 leading-relaxed">It's time to stop guessing. We'll identify your "Anchor" numbers—the key data points that tell us exactly how much fuel your body needs to thrive and recover.</p>
                     </div>
 
-                    <!-- Pillar 3 -->
                     <div class="glass-card p-10 rounded-3xl group hover:border-brand-sage/50 transition-all duration-500">
                         <div class="w-12 h-12 rounded-full bg-brand-sage/20 flex items-center justify-center mb-6 text-brand-sage font-black text-xl">3</div>
                         <h3 class="font-black text-2xl uppercase mb-2">The Step Ramp</h3>
@@ -200,7 +196,6 @@
                         <p class="text-lg text-neutral-400 leading-relaxed">Intentional walking is one of the most effective, low-stress levers for fat loss and mental clarity. We use it to drive results without overtaxing your system.</p>
                     </div>
 
-                    <!-- Pillar 4 -->
                     <div class="glass-card p-10 rounded-3xl group hover:border-brand-sage/50 transition-all duration-500">
                         <div class="w-12 h-12 rounded-full bg-brand-sage/20 flex items-center justify-center mb-6 text-brand-sage font-black text-xl">4</div>
                         <h3 class="font-black text-2xl uppercase mb-2">The "No Zero" Pact</h3>
@@ -211,7 +206,6 @@
             </div>
         </section>
 
-        <!-- Is This For You? -->
         <section class="py-24 px-4 sm:px-6">
             <div class="max-w-6xl mx-auto glass-card-light rounded-[2.5rem] p-12 text-black overflow-hidden relative">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -236,16 +230,14 @@
             </div>
         </section>
         
-        <!-- Arrow Animation -->
         <div class="pb-12 text-center">
-            <button onclick="openModal()" class="inline-block p-5 rounded-full glass-card hover:bg-white/10 transition duration-300 group animate-arrow">
+            <button onclick="openModal()" aria-label="Scroll to waitlist" class="inline-block p-5 rounded-full glass-card hover:bg-white/10 transition duration-300 group animate-arrow">
                 <svg class="w-8 h-8 text-brand-sage" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                 </svg>
             </button>
         </div>
 
-        <!-- Final CTA -->
         <section id="signup" class="py-32 px-4 sm:px-6">
             <div class="max-w-4xl mx-auto glass-card rounded-[3rem] p-12 sm:p-20 text-center relative overflow-hidden">
                 <div class="absolute -top-24 -left-24 w-64 h-64 bg-brand-sage/20 blur-[80px] rounded-full"></div>
@@ -267,7 +259,6 @@
         </section>
     </main>
 
-    <!-- Footer -->
     <footer class="p-16 bg-black/50 backdrop-blur-md border-t border-white/10">
         <div class="max-w-4xl mx-auto text-center">
             <p class="text-[10px] mb-8 leading-relaxed text-neutral-500 uppercase tracking-widest">
@@ -284,7 +275,6 @@
         </div>
     </footer>
 
-    <!-- REWORKED MINIMALIST MODAL -->
     <div id="comingSoonModal" class="modal-overlay fixed inset-0 z-[100] items-center justify-center p-4" onclick="closeModalOnOverlay(event)">
         <div class="modal-inner max-w-lg w-full glass-card p-10 sm:p-14 rounded-[2rem] text-center relative">
             
@@ -293,26 +283,56 @@
             </button>
 
             <div class="mb-8">
-                <div class="text-[11px] font-black uppercase tracking-[0.4em] text-brand-sage mb-6">Heads Up</div>
-                <h2 class="text-4xl font-black uppercase tracking-tighter text-white mb-6 leading-none">
-                    Let's get <br>you on the list.
+                <div class="text-[11px] font-black uppercase tracking-[0.4em] text-brand-sage mb-6">Priority Access</div>
+                <h2 class="text-4xl font-black uppercase tracking-tighter text-white mb-4 leading-none">
+                    Secure your <br>spot on the list.
                 </h2>
                 <p class="text-neutral-400 text-lg font-light italic leading-relaxed">
-                    I keep these groups limited to make sure everyone gets the focus they actually need. Intakes run periodically, and right now we're currently at capacity.
+                    Intakes are kept small to ensure every trainee gets eyes on their progress. Join the waitlist to be notified of the next launch.
                 </p>
             </div>
 
-            <div class="pt-8 border-t border-white/10">
-                <p class="text-xs font-bold text-neutral-500 uppercase tracking-widest mb-4">Want to secure your spot?</p>
-                <a href="mailto:circularrootscoaching@gmail.com?subject=14-Day Fundamentals Waitlist" class="cta-button block w-full py-5 font-black text-sm uppercase tracking-widest rounded-xl transition shadow-lg shadow-brand-sage/20 text-center">
-                    Shoot me an email
-                </a>
-                <p class="mt-4 text-[10px] font-bold text-neutral-600 uppercase tracking-widest leading-relaxed">
-                    Simply ask to be added to the <br>
-                    <span class="text-brand-sage italic">"14-Day Fundamentals Waitlist"</span> <br>
-                    and I'll notify you as soon as a space opens up.
+            <form action="https://formbold.com/s/9gDBV" method="POST" class="text-left space-y-5">
+                
+                <div>
+                    <label class="text-[10px] font-black uppercase tracking-widest text-neutral-500 mb-2 block ml-1">Full Name</label>
+                    <input type="text" name="full_name" required placeholder="John Doe" 
+                        class="w-full p-4 bg-white/5 border border-white/10 rounded-xl text-white outline-none focus:border-brand-sage transition-all duration-300">
+                </div>
+
+                <div>
+                    <label class="text-[10px] font-black uppercase tracking-widest text-neutral-500 mb-2 block ml-1">Email Address</label>
+                    <input type="email" name="email" required placeholder="name@email.com" 
+                        class="w-full p-4 bg-white/5 border border-white/10 rounded-xl text-white outline-none focus:border-brand-sage transition-all duration-300">
+                </div>
+
+                <div>
+                    <label class="text-[10px] font-black uppercase tracking-widest text-neutral-500 mb-2 block ml-1">Which outcome is most important right now?</label>
+                    <div class="relative">
+                        <select name="desired_outcome" required 
+                            class="w-full p-4 bg-black/60 border border-white/10 rounded-xl text-white outline-none focus:border-brand-sage transition-all duration-300 appearance-none cursor-pointer text-sm">
+                            <option value="" disabled selected>Select your priority...</option>
+                            <option value="Fluidity">Fluidity: From "rusty" and stiff to moving with ease</option>
+                            <option value="Clarity">Clarity: From "hoping it works" to knowing your numbers</option>
+                            <option value="Consistency">Consistency: From "all-or-nothing" to a sustainable rhythm</option>
+                            <option value="Elevation">Elevation: From stagnant results to a new level of performance</option>
+                        </select>
+                        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-brand-sage">
+                            <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7"></path></svg>
+                        </div>
+                    </div>
+                </div>
+
+                <input type="hidden" name="_subject" value="New 14-Day Fundamentals Lead">
+
+                <button type="submit" onclick="this.innerText='Securing Spot...'; this.classList.add('opacity-50')" class="cta-button block w-full py-5 mt-4 font-black text-sm uppercase tracking-[0.2em] rounded-xl shadow-lg shadow-brand-sage/20 text-center">
+                    Join the Waitlist
+                </button>
+                
+                <p class="text-[9px] text-center text-neutral-600 uppercase font-bold tracking-widest">
+                    No spam. Only intake notifications and training updates.
                 </p>
-            </div>
+            </form>
         </div>
     </div>
 
@@ -364,3 +384,4 @@
     </script>
 </body>
 </html>
+
