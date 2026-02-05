@@ -25,7 +25,6 @@
             background-color: #0a0a0a;
         }
         
-        /* Glassmorphism Base Styles */
         .glass-card {
             background: rgba(255, 255, 255, 0.03);
             backdrop-filter: blur(12px);
@@ -41,12 +40,10 @@
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
-        /* Sage Accents */
         .text-brand-sage { color: var(--brand-sage); }
         .bg-brand-sage { background-color: var(--brand-sage); }
         .border-brand-sage { border-color: var(--brand-sage); }
 
-        /* Animated background blobs for depth */
         .bg-blob {
             position: fixed;
             width: 500px;
@@ -85,7 +82,6 @@
             animation: pulse-arrow 1.4s infinite ease-in-out;
         }
 
-        /* MODAL ANIMATIONS */
         .modal-overlay {
             background: rgba(0, 0, 0, 0.85);
             backdrop-filter: blur(10px);
@@ -242,7 +238,6 @@
             <div class="max-w-4xl mx-auto glass-card rounded-[3rem] p-12 sm:p-20 text-center relative overflow-hidden">
                 <div class="absolute -top-24 -left-24 w-64 h-64 bg-brand-sage/20 blur-[80px] rounded-full"></div>
                 <div class="absolute -bottom-24 -right-24 w-64 h-64 bg-brand-sage/10 blur-[80px] rounded-full"></div>
-                
                 <p class="text-4xl sm:text-5xl font-black mb-8 uppercase text-white leading-tight tracking-tighter">
                     Time to establish a <br><span class="text-brand-sage">better baseline</span>.
                 </p>
@@ -252,9 +247,6 @@
                 <button onclick="openModal()" class="cta-button inline-block px-14 py-6 font-black text-2xl uppercase tracking-tighter rounded-2xl">
                     JOIN THE 14-DAY RESET
                 </button>
-                <p class="mt-10 text-[10px] font-black uppercase text-neutral-500 tracking-[0.3em]">
-                    Next Enrollment Period Closing Soon.
-                </p>
             </div>
         </section>
     </main>
@@ -265,59 +257,61 @@
                 General Fitness Disclaimer: Always consult your medical professional or doctor before you begin any fitness regime or make changes to your diet. This site provides general information for educational purposes only and is not intended to diagnose or treat any medical condition. You engage in physical activity at your own risk.
             </p>
             
-            <p class="text-sm font-black text-white mb-2 tracking-tight">
-                &copy; <span id="current-year">2025</span> COACH CHRIS | CIRCULAR ROOTS COACHING | TRAIN UNCNVNTNL.
-            </p>
+            <div class="flex flex-col space-y-1 text-sm font-black text-white mb-4 tracking-tighter uppercase italic">
+                <span>&copy; <span id="current-year">2026</span> COACH CHRIS</span>
+                <span>CIRCULAR ROOTS COACHING</span>
+                <span>TRAIN UNCNVNTNL.</span>
+            </div>
             
-            <p class="text-xs font-bold text-brand-sage uppercase tracking-widest">
+            <p class="text-xs font-bold text-brand-sage uppercase tracking-[0.3em]">
                 Fitter. Stronger. Better.
             </p>
         </div>
     </footer>
 
     <div id="comingSoonModal" class="modal-overlay fixed inset-0 z-[100] items-center justify-center p-4" onclick="closeModalOnOverlay(event)">
-        <div class="modal-inner max-w-lg w-full glass-card p-10 sm:p-14 rounded-[2rem] text-center relative">
+        <div class="modal-inner max-w-lg w-full glass-card p-6 sm:p-10 rounded-[2rem] relative max-h-[90vh] overflow-y-auto">
             
-            <button onclick="closeModal()" class="absolute top-6 right-6 text-neutral-500 hover:text-white transition p-2">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            <button onclick="closeModal()" 
+                class="absolute top-4 right-4 w-10 h-10 flex items-center justify-center rounded-full bg-white/10 border border-white/20 text-white hover:bg-white/20 transition-all duration-300 z-[110]"
+                aria-label="Close Modal">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
             </button>
 
-            <div class="mb-8">
-                <div class="text-[11px] font-black uppercase tracking-[0.4em] text-brand-sage mb-6">Priority Access</div>
-                <h2 class="text-4xl font-black uppercase tracking-tighter text-white mb-4 leading-none">
-                    Secure your <br>spot on the list.
+            <div class="text-center mb-6 mt-6">
+                <div class="text-[10px] font-black uppercase tracking-[0.3em] text-brand-sage mb-2">Priority Access</div>
+                <h2 class="text-3xl font-black uppercase tracking-tighter text-white leading-none">
+                    Secure your spot.
                 </h2>
-                <p class="text-neutral-400 text-lg font-light italic leading-relaxed">
-                    Intakes are kept small to ensure every trainee gets eyes on their progress. Join the waitlist to be notified of the next launch.
-                </p>
             </div>
 
-            <form action="https://formbold.com/s/9gDBV" method="POST" class="text-left space-y-5">
-                
+            <form action="https://formbold.com/s/9gDBV" method="POST" class="text-left space-y-4">
                 <div>
-                    <label class="text-[10px] font-black uppercase tracking-widest text-neutral-500 mb-2 block ml-1">Full Name</label>
+                    <label class="text-[10px] font-black uppercase tracking-widest text-neutral-500 mb-1 block ml-1">Full Name</label>
                     <input type="text" name="full_name" required placeholder="John Doe" 
-                        class="w-full p-4 bg-white/5 border border-white/10 rounded-xl text-white outline-none focus:border-brand-sage transition-all duration-300">
+                        class="w-full p-3 bg-white/5 border border-white/10 rounded-xl text-white outline-none focus:border-brand-sage transition-all text-sm">
                 </div>
 
                 <div>
-                    <label class="text-[10px] font-black uppercase tracking-widest text-neutral-500 mb-2 block ml-1">Email Address</label>
+                    <label class="text-[10px] font-black uppercase tracking-widest text-neutral-500 mb-1 block ml-1">Email Address</label>
                     <input type="email" name="email" required placeholder="name@email.com" 
-                        class="w-full p-4 bg-white/5 border border-white/10 rounded-xl text-white outline-none focus:border-brand-sage transition-all duration-300">
+                        class="w-full p-3 bg-white/5 border border-white/10 rounded-xl text-white outline-none focus:border-brand-sage transition-all text-sm">
                 </div>
 
                 <div>
-                    <label class="text-[10px] font-black uppercase tracking-widest text-neutral-500 mb-2 block ml-1">Which outcome is most important right now?</label>
+                    <label class="text-[10px] font-black uppercase tracking-widest text-neutral-500 mb-1 block ml-1">Priority Focus</label>
                     <div class="relative">
                         <select name="desired_outcome" required 
-                            class="w-full p-4 bg-black/60 border border-white/10 rounded-xl text-white outline-none focus:border-brand-sage transition-all duration-300 appearance-none cursor-pointer text-sm">
-                            <option value="" disabled selected>Select your priority...</option>
-                            <option value="Fluidity">Fluidity: From "rusty" and stiff to moving with ease</option>
-                            <option value="Clarity">Clarity: From "hoping it works" to knowing your numbers</option>
-                            <option value="Consistency">Consistency: From "all-or-nothing" to a sustainable rhythm</option>
-                            <option value="Elevation">Elevation: From stagnant results to a new level of performance</option>
+                            class="w-full p-3 bg-black/60 border border-white/10 rounded-xl text-white outline-none focus:border-brand-sage appearance-none cursor-pointer text-sm">
+                            <option value="" disabled selected>Select priority...</option>
+                            <option value="Fluidity">Fluidity: Moving with ease</option>
+                            <option value="Clarity">Clarity: Data & Anchors</option>
+                            <option value="Consistency">Consistency: Better rhythm</option>
+                            <option value="Elevation">Elevation: Break plateaus</option>
                         </select>
-                        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-brand-sage">
+                        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-brand-sage">
                             <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7"></path></svg>
                         </div>
                     </div>
@@ -325,13 +319,9 @@
 
                 <input type="hidden" name="_subject" value="New 14-Day Fundamentals Lead">
 
-                <button type="submit" onclick="this.innerText='Securing Spot...'; this.classList.add('opacity-50')" class="cta-button block w-full py-5 mt-4 font-black text-sm uppercase tracking-[0.2em] rounded-xl shadow-lg shadow-brand-sage/20 text-center">
+                <button type="submit" onclick="this.innerText='Securing Spot...'; this.classList.add('opacity-50')" class="cta-button block w-full py-4 mt-2 font-black text-xs uppercase tracking-widest rounded-xl shadow-lg shadow-brand-sage/20 text-center">
                     Join the Waitlist
                 </button>
-                
-                <p class="text-[9px] text-center text-neutral-600 uppercase font-bold tracking-widest">
-                    No spam. Only intake notifications and training updates.
-                </p>
             </form>
         </div>
     </div>
@@ -359,7 +349,6 @@
             });
         });
 
-        // MODAL LOGIC
         const modal = document.getElementById('comingSoonModal');
         
         function openModal() {
@@ -384,4 +373,3 @@
     </script>
 </body>
 </html>
-
