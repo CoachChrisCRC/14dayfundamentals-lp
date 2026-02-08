@@ -300,9 +300,11 @@
             </div>
             <div class="pt-8 border-t border-white/10">
                 <form id="signupForm" action="https://formbold.com/s/9gDBV" method="POST" class="text-left space-y-4">
+                    <input type="hidden" id="redirectAttr" name="_next" value="">
+                    
                     <div>
                         <label class="block text-[10px] font-bold uppercase tracking-widest text-neutral-500 mb-2 ml-1">Full Name</label>
-                        <input type="text" id="userNameInput" name="name" required placeholder="Enter your name" class="form-input w-full px-5 py-4 rounded-xl text-sm font-medium">
+                        <input type="text" id="userNameInput" name="first_name" required placeholder="Enter your name" class="form-input w-full px-5 py-4 rounded-xl text-sm font-medium">
                     </div>
                     <div>
                         <label class="block text-[10px] font-bold uppercase tracking-widest text-neutral-500 mb-2 ml-1">Email Address</label>
@@ -344,17 +346,19 @@
                 });
             });
 
-            // Name Transfer Script
+            // Name Transfer Script - MODIFIED FOR FORMBOLD
             const signupForm = document.getElementById('signupForm');
             signupForm.addEventListener('submit', function(e) {
                 const fullName = document.getElementById('userNameInput').value;
                 const firstName = fullName.split(' ')[0];
-                const redirectInput = document.createElement('input');
-                redirectInput.type = 'hidden';
-                redirectInput.name = '_next';
-                // Automatically points to your thank-you.html in the same directory
-                redirectInput.value = window.location.href.split('index.html')[0].split('#')[0] + `thank-you.html?first_name=${firstName}`;
-                signupForm.appendChild(redirectInput);
+                const redirectInput = document.getElementById('redirectAttr');
+                
+                // Construct the absolute path to thank-you.html
+                let thankYouPath = window.location.origin + window.location.pathname.replace('index.html', '');
+                if (!thankYouPath.endsWith('/')) thankYouPath += '/';
+                
+                // This tells FormBold where to send the user + adds the name data
+                redirectInput.value = thankYouPath + `thank-you.html?first_name=${firstName}`;
             });
         });
 
