@@ -4,34 +4,295 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>THE 14-DAY FUNDAMENTALS | Body Software Update</title>
+
+    <meta property="og:title" content="The 14-Day Fundamentals | Body Software Update">
+    <meta property="og:description" content="A 2-week minimalist reset for everyday men and women. Fix your foundation and train unconventional.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://coachchriscrc.github.io/14dayfundamentals-lp/">
+    <meta property="og:image" content="https://coachchriscrc.github.io/14dayfundamentals-lp/preview-image.jpg">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
-        :root { --brand-sage: #87ae73; }
-        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; overflow-x: hidden; scroll-padding-top: 7rem; background-color: #0a0a0a; }
-        .glass-card { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37); }
-        .glass-card-light { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2); }
+        
+        :root {
+            --brand-sage: #87ae73;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+            overflow-x: hidden; 
+            scroll-padding-top: 7rem; 
+            background-color: #0a0a0a;
+        }
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+
+        .glass-card-light {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
         .text-brand-sage { color: var(--brand-sage); }
         .bg-brand-sage { background-color: var(--brand-sage); }
-        .bg-blob { position: fixed; width: 500px; height: 500px; background: radial-gradient(circle, rgba(135, 174, 115, 0.15) 0%, rgba(0, 0, 0, 0) 70%); border-radius: 50%; z-index: -1; filter: blur(60px); }
-        .cta-button { transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); background: var(--brand-sage); color: white; box-shadow: 0 4px 15px rgba(135, 174, 115, 0.3); cursor: pointer; border: none; display: inline-block; text-align: center; }
-        .cta-button:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 8px 25px rgba(135, 174, 115, 0.5); filter: brightness(1.1); }
-        .header-glass { background: rgba(10, 10, 10, 0.8); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
-        @keyframes pulse-arrow { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
-        .animate-arrow { animation: pulse-arrow 1.4s infinite ease-in-out; }
-        .form-input { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); color: white; transition: all 0.3s ease; }
-        .form-input:focus { outline: none; border-color: var(--brand-sage); background: rgba(255, 255, 255, 0.08); box-shadow: 0 0 0 4px rgba(135, 174, 115, 0.1); }
-        .modal-overlay { background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(10px); display: none; opacity: 0; transition: opacity 0.3s ease; z-index: 200; }
-        .modal-overlay.active { display: flex; opacity: 1; }
-        .modal-inner { transform: translateY(20px); opacity: 0; transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); }
-        .modal-overlay.active .modal-inner { transform: translateY(0); opacity: 1; }
+        .border-brand-sage { border-color: var(--brand-sage); }
+
+        .bg-blob {
+            position: fixed;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(135, 174, 115, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+            border-radius: 50%;
+            z-index: -1;
+            filter: blur(60px);
+        }
+
+        .cta-button {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            background: var(--brand-sage);
+            color: white;
+            box-shadow: 0 4px 15px rgba(135, 174, 115, 0.3);
+            cursor: pointer;
+            border: none;
+            display: inline-block;
+            text-align: center;
+        }
+        .cta-button:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 8px 25px rgba(135, 174, 115, 0.5);
+            filter: brightness(1.1);
+        }
+        
+        .header-glass {
+            background: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        @keyframes pulse-arrow {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-6px); }
+        }
+        .animate-arrow {
+            animation: pulse-arrow 1.4s infinite ease-in-out;
+        }
+
+        .form-input {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: white;
+            transition: all 0.3s ease;
+        }
+        .form-input:focus {
+            outline: none;
+            border-color: var(--brand-sage);
+            background: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 0 0 4px rgba(135, 174, 115, 0.1);
+        }
+
+        .modal-overlay {
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(10px);
+            display: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 200;
+        }
+        .modal-overlay.active {
+            display: flex;
+            opacity: 1;
+        }
+        .modal-inner {
+            transform: translateY(20px);
+            opacity: 0;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        .modal-overlay.active .modal-inner {
+            transform: translateY(0);
+            opacity: 1;
+        }
     </style>
 </head>
 <body class="text-white antialiased">
+
     <div class="bg-blob top-[-10%] left-[-10%]"></div>
+    <div class="bg-blob bottom-[10%] right-[-5%]" style="background: radial-gradient(circle, rgba(135, 174, 115, 0.1) 0%, rgba(0, 0, 0, 0) 70%);"></div>
+
+    <header class="sticky top-0 z-50 header-glass p-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="text-left leading-none">
+                <div class="text-xl sm:text-2xl font-black uppercase tracking-tighter text-white">
+                    14-DAY FUNDAMENTALS
+                </div>
+                <div class="flex flex-col text-[10px] sm:text-xs font-bold uppercase text-neutral-400 mt-2 tracking-widest leading-normal">
+                    <span>COACH CHRIS</span>
+                    <span>CIRCULAR ROOTS COACHING</span>
+                    <span>TRAIN UNCNVNTNL</span>
+                </div>
+            </div>
+            
+            <div class="flex flex-col space-y-3">
+                <a href="#signup" class="w-36 sm:w-44 text-center px-4 py-3.5 text-[11px] sm:text-xs uppercase font-extrabold bg-brand-sage text-white rounded-xl hover:brightness-110 transition duration-150 shadow-lg shadow-[#87ae73]/20 tracking-wider">
+                    CLAIM YOUR SPOT
+                </a>
+                <a href="#pillars" class="w-36 sm:w-44 text-center px-4 py-3.5 text-[11px] sm:text-xs uppercase font-bold bg-white/10 text-white rounded-xl border border-white/20 backdrop-blur-md hover:bg-white/20 transition duration-150 tracking-wider">
+                    HOW IT WORKS
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section class="min-h-[85vh] flex flex-col items-start justify-center px-4 sm:px-6 py-20">
+        <div class="max-w-6xl mx-auto w-full">
+            <h1 class="text-5xl sm:text-6xl md:text-8xl font-black leading-[0.9] mb-10 uppercase max-w-5xl tracking-tighter">
+                Most fitness journeys <span class="text-brand-sage">stall out early</span>. Let's fix your foundation first.
+            </h1>
+            <p class="text-xl sm:text-2xl font-light italic mt-4 max-w-4xl text-neutral-300 leading-relaxed border-l-2 border-brand-sage pl-6">
+                You wouldn't try to build a second story on a house with a cracked foundation. If you've been feeling "rusty" or stuck, it's time to stop piling on more intensity and start reinforcing the structure you're working with.
+            </p>
+        </div>
+    </section>
+    
+    <main>
+        <section class="py-24 px-4 sm:px-6 relative overflow-hidden">
+            <div class="max-w-6xl mx-auto glass-card-light rounded-[2.5rem] p-12 sm:p-20 text-black">
+                <h2 class="text-4xl sm:text-5xl font-black uppercase tracking-tighter max-w-4xl mb-8">
+                    A quick <span class="text-brand-sage">Reality Check</span> on why progress slows down.
+                </h2>
+                <p class="text-2xl font-light italic mb-10 max-w-5xl leading-relaxed text-neutral-800">
+                    Most plans ignore the silent roadblocks: creaky joints, tight lower backs, and a lack of real data. Instead of more burnout-inducing burpees, we focus on <span class="font-bold uppercase tracking-wide">Stacking</span>—stabilizing your base so your future progress actually has somewhere to stand.
+                </p>
+                <div class="text-left">
+                    <a href="#signup" class="cta-button inline-block px-10 py-5 font-extrabold text-lg uppercase rounded-xl tracking-tight">
+                        I'M READY TO START
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="pillars" class="py-24 px-4 sm:px-6">
+            <div class="max-w-6xl mx-auto">
+                <div class="mb-20">
+                    <h2 class="text-4xl sm:text-6xl font-black uppercase tracking-tighter">
+                        The Two-Week <span class="text-brand-sage">System Overhaul</span>.
+                    </h2>
+                    <div class="w-32 h-2 bg-brand-sage mt-6 rounded-full"></div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="glass-card p-10 rounded-3xl group hover:border-brand-sage/50 transition-all duration-500">
+                        <div class="w-12 h-12 rounded-full bg-brand-sage/20 flex items-center justify-center mb-6 text-brand-sage font-black text-xl">1</div>
+                        <h3 class="font-black text-2xl uppercase mb-2">Joint Maintenance</h3>
+                        <p class="text-lg text-brand-sage font-bold uppercase italic mb-4">The 10-Move Flow</p>
+                        <p class="text-lg text-neutral-400 leading-relaxed">We focus on getting your hips, back, and shoulders functioning properly again. Think of this as reinforcing the frame so you can handle a heavier load without that nagging morning stiffness.</p>
+                    </div>
+
+                    <div class="glass-card p-10 rounded-3xl group hover:border-brand-sage/50 transition-all duration-500">
+                        <div class="w-12 h-12 rounded-full bg-brand-sage/20 flex items-center justify-center mb-6 text-brand-sage font-black text-xl">2</div>
+                        <h3 class="font-black text-2xl uppercase mb-2">Metabolic Grounding</h3>
+                        <p class="text-lg text-brand-sage font-bold uppercase italic mb-4">Find Your Anchor</p>
+                        <p class="text-lg text-neutral-400 leading-relaxed">It's time to stop guessing. We'll identify your "Anchor" numbers—the key data points that tell us exactly how much fuel your body needs to thrive and recover.</p>
+                    </div>
+
+                    <div class="glass-card p-10 rounded-3xl group hover:border-brand-sage/50 transition-all duration-500">
+                        <div class="w-12 h-12 rounded-full bg-brand-sage/20 flex items-center justify-center mb-6 text-brand-sage font-black text-xl">3</div>
+                        <h3 class="font-black text-2xl uppercase mb-2">The Step Ramp</h3>
+                        <p class="text-lg text-brand-sage font-bold uppercase italic mb-4">Steady-State Momentum</p>
+                        <p class="text-lg text-neutral-400 leading-relaxed">Intentional walking is one of the most effective, low-stress levers for fat loss and mental clarity. We use it to drive results without overtaxing your system.</p>
+                    </div>
+
+                    <div class="glass-card p-10 rounded-3xl group hover:border-brand-sage/50 transition-all duration-500">
+                        <div class="w-12 h-12 rounded-full bg-brand-sage/20 flex items-center justify-center mb-6 text-brand-sage font-black text-xl">4</div>
+                        <h3 class="font-black text-2xl uppercase mb-2">The "No Zero" Pact</h3>
+                        <p class="text-lg text-brand-sage font-bold uppercase italic mb-4">Consistency Over Intensity</p>
+                        <p class="text-lg text-neutral-400 leading-relaxed">Sustainable change is built brick by brick. We'll establish a baseline you can hit even on your most chaotic days, ensuring that the work never truly stops.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-24 px-4 sm:px-6">
+            <div class="max-w-6xl mx-auto glass-card-light rounded-[2.5rem] p-12 text-black overflow-hidden relative">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h2 class="text-4xl font-black uppercase tracking-tighter mb-10">
+                            Does this sound like <span class="text-brand-sage">what you need?</span>
+                        </h2>
+                        <ul class="space-y-6 text-lg font-bold uppercase italic tracking-tight">
+                            <li class="flex items-start"><span class="text-brand-sage mr-4 mt-1 font-black">/</span> You're tired of waking up feeling stiff or "rusty."</li>
+                            <li class="flex items-start"><span class="text-brand-sage mr-4 mt-1 font-black">/</span> You've realized generic plans ignore your specific aches.</li>
+                            <li class="flex items-start"><span class="text-brand-sage mr-4 mt-1 font-black">/</span> You need a routine that respects your time and energy.</li>
+                            <li class="flex items-start"><span class="text-brand-sage mr-4 mt-1 font-black">/</span> You're ready to build a base that finally lasts.</li>
+                        </ul>
+                    </div>
+                    <div class="bg-black text-white p-12 rounded-[2rem] flex items-center justify-center relative">
+                        <div class="absolute inset-0 bg-brand-sage/10 blur-2xl"></div>
+                        <p class="text-3xl font-black text-center uppercase tracking-tighter leading-tight relative z-10">
+                            14 DAYS. <br> NO NONSENSE. <br> <span class="text-brand-sage">JUST THE ESSENTIALS.</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <div class="pb-12 text-center">
+            <a href="#signup" class="inline-block p-5 rounded-full glass-card hover:bg-white/10 transition duration-300 group animate-arrow">
+                <svg class="w-8 h-8 text-brand-sage" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                </svg>
+            </a>
+        </div>
+
+        <section id="signup" class="py-32 px-4 sm:px-6">
+            <div class="max-w-4xl mx-auto glass-card rounded-[3rem] p-12 sm:p-20 text-center relative overflow-hidden">
+                <div class="absolute -top-24 -left-24 w-64 h-64 bg-brand-sage/20 blur-[80px] rounded-full"></div>
+                <div class="absolute -bottom-24 -right-24 w-64 h-64 bg-brand-sage/10 blur-[80px] rounded-full"></div>
+                
+                <p class="text-4xl sm:text-5xl font-black mb-8 uppercase text-white leading-tight tracking-tighter">
+                    Time to establish a <br><span class="text-brand-sage">better baseline</span>.
+                </p>
+                <p class="text-xl italic mb-12 font-light text-neutral-400 leading-relaxed max-w-2xl mx-auto">
+                    Take two weeks to stop the guesswork. This is a simple reset designed to turn small, daily actions into a routine you actually look forward to doing.
+                </p>
+                <button onclick="openModal()" class="cta-button px-14 py-6 font-black text-2xl uppercase tracking-tighter rounded-2xl">
+                    JOIN THE 14-DAY RESET
+                </button>
+                <p class="mt-10 text-[10px] font-black uppercase text-neutral-500 tracking-[0.3em]">
+                    Next Enrollment Period Closing Soon.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="p-16 bg-black/50 backdrop-blur-md border-t border-white/10">
+        <div class="max-w-4xl mx-auto text-center">
+            <p class="text-[10px] mb-8 leading-relaxed text-neutral-500 uppercase tracking-widest">
+                General Fitness Disclaimer: Always consult your medical professional or doctor before you begin any fitness regime or make changes to your diet. This site provides general information for educational purposes only and is not intended to diagnose or treat any medical condition. You engage in physical activity at your own risk.
+            </p>
+            <p class="text-sm font-black text-white mb-2 tracking-tight">
+                &copy; <span id="current-year">2026</span> COACH CHRIS | CIRCULAR ROOTS COACHING | TRAIN UNCNVNTNL.
+            </p>
+            <p class="text-xs font-bold text-brand-sage uppercase tracking-widest">
+                Fitter. Stronger. Better.
+            </p>
+        </div>
+    </footer>
+
     <div id="comingSoonModal" class="modal-overlay fixed inset-0 items-center justify-center p-4" onclick="closeModalOnOverlay(event)">
         <div class="modal-inner max-w-lg w-full glass-card p-10 sm:p-14 rounded-[2rem] text-center relative">
-            <button onclick="closeModal()" class="absolute top-6 right-6 text-neutral-500 hover:text-white transition p-2"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></button>
+            <button onclick="closeModal()" class="absolute top-6 right-6 text-neutral-500 hover:text-white transition p-2">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
             <div class="mb-8">
                 <div class="text-[11px] font-black uppercase tracking-[0.4em] text-brand-sage mb-6">Join the Waitlist</div>
                 <h2 class="text-4xl font-black uppercase tracking-tighter text-white mb-6 leading-none">Secure your <br>spot today.</h2>
@@ -54,23 +315,62 @@
         </div>
     </div>
 
+    <div class="fixed bottom-6 right-6 z-[100]">
+        <a href="https://wa.me/447925116794?text=Hi%20Chris%2C%20I'm%20looking%20at%20the%2014-Day%20Fundamentals.%20I%20had%20a%20quick%20question%20about%20the%20program..." 
+           target="_blank" 
+           class="flex items-center justify-center w-14 h-14 bg-brand-sage text-white rounded-full shadow-lg hover:scale-110 transition-transform duration-300 group relative">
+            <span class="absolute right-16 bg-white text-black text-[10px] font-black uppercase px-3 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap pointer-events-none tracking-widest shadow-xl">Questions? Chat with me</span>
+            <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+            </svg>
+        </a>
+    </div>
+
     <script>
-        const signupForm = document.getElementById('signupForm');
-        signupForm.addEventListener('submit', function(e) {
-            const fullName = document.getElementById('userNameInput').value;
-            const firstName = fullName.split(' ')[0];
-            const redirectInput = document.createElement('input');
-            redirectInput.type = 'hidden';
-            redirectInput.name = '_next';
-            // It will redirect to your thank you page and pass the name
-            redirectInput.value = window.location.href.replace('index.html', '') + `thank-you.html?first_name=${firstName}`;
-            signupForm.appendChild(redirectInput);
+        document.addEventListener('DOMContentLoaded', () => {
+            const yearSpan = document.getElementById('current-year');
+            if (yearSpan) yearSpan.textContent = new Date().getFullYear();
+
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    const hash = this.getAttribute('href');
+                    if (hash.length > 1 && hash.startsWith('#')) {
+                        e.preventDefault();
+                        const targetElement = document.getElementById(hash.substring(1));
+                        if (targetElement) {
+                            targetElement.scrollIntoView({ behavior: 'smooth' });
+                        }
+                    }
+                });
+            });
+
+            // Name Transfer Script
+            const signupForm = document.getElementById('signupForm');
+            signupForm.addEventListener('submit', function(e) {
+                const fullName = document.getElementById('userNameInput').value;
+                const firstName = fullName.split(' ')[0];
+                const redirectInput = document.createElement('input');
+                redirectInput.type = 'hidden';
+                redirectInput.name = '_next';
+                // Automatically points to your thank-you.html in the same directory
+                redirectInput.value = window.location.href.split('index.html')[0].split('#')[0] + `thank-you.html?first_name=${firstName}`;
+                signupForm.appendChild(redirectInput);
+            });
         });
 
-        // Your original Modal and Scroll scripts
-        function openModal() { document.getElementById('comingSoonModal').style.display = 'flex'; setTimeout(() => document.getElementById('comingSoonModal').classList.add('active'), 10); document.body.style.overflow = 'hidden'; }
-        function closeModal() { document.getElementById('comingSoonModal').classList.remove('active'); setTimeout(() => document.getElementById('comingSoonModal').style.display = 'none', 300); document.body.style.overflow = ''; }
-        function closeModalOnOverlay(e) { if (e.target === document.getElementById('comingSoonModal')) closeModal(); }
+        const modal = document.getElementById('comingSoonModal');
+        function openModal() {
+            modal.style.display = 'flex';
+            setTimeout(() => modal.classList.add('active'), 10);
+            document.body.style.overflow = 'hidden'; 
+        }
+        function closeModal() {
+            modal.classList.remove('active');
+            setTimeout(() => modal.style.display = 'none', 300);
+            document.body.style.overflow = ''; 
+        }
+        function closeModalOnOverlay(e) { if (e.target === modal) closeModal(); }
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && modal.classList.contains('active')) closeModal(); });
     </script>
 </body>
 </html>
