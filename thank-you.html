@@ -82,7 +82,7 @@
         </h1>
         
         <p class="text-xl text-neutral-400 font-light italic mb-10 leading-relaxed">
-            I’ve received your details, <span id="userName" class="text-white font-bold">there</span>. When a spot opens up in the next intake, you'll be the first to know. 
+            I’ve received your details, <span id="userName" class="text-white font-bold">legend</span>. When a spot opens up in the next intake, you'll be the first to know. 
         </p>
 
         <div class="mt-10 mb-10 p-6 sm:p-8 bg-brand-sage/5 border border-brand-sage/20 rounded-3xl text-left">
@@ -162,18 +162,22 @@
         document.addEventListener('DOMContentLoaded', () => {
             // 1. Personalization Logic
             const params = new URLSearchParams(window.location.search);
-            const firstName = params.get('first_name') || 'there';
+            const rawName = params.get('first_name');
+            
+            // Fallbacks
+            const firstName = rawName || 'legend';
+            const waName = rawName || 'a new member';
             
             // Set name in main text
             document.getElementById('userName').textContent = firstName;
 
             // Set personalized message in WhatsApp bubble
             const popup = document.getElementById('wa-popup');
-            popup.innerHTML = `Thanks for joining, ${firstName}! Send 'Hey' to ask me anything or get the Tactical Frog video guide. <div class="absolute -bottom-2 right-6 w-4 h-4 bg-white rotate-45"></div>`;
+            popup.innerHTML = `Thanks for joining, ${firstName}! Send 'Hey' to get the video or ask me anything. <div class="absolute -bottom-2 right-6 w-4 h-4 bg-white rotate-45"></div>`;
 
-            // Update WhatsApp link with ONLY the name personalized, message remains original
+            // Update WhatsApp link with your new custom phrase
             const waLink = document.getElementById('wa-dynamic-link');
-            const message = `Hey Chris! This is ${firstName}. I just signed up for the 14-Day Fundamentals waitlist. Could you send over that Tactical Frog video you mentioned?`;
+            const message = `Hey Chris! It's ${waName} I just signed up for the 14-Day Fundamentals waitlist. I'm ready to get started—what should I do first?`;
             waLink.href = `https://wa.me/447925116794?text=${encodeURIComponent(message)}`;
 
             // 2. Scroll-Triggered UI (at 60% depth)
