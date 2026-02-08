@@ -171,7 +171,7 @@
             if (firstName) {
                 userNameEl.textContent = firstName;
             } else {
-                nameWrapper.style.display = 'none'; // Removes ", there" or any blank space
+                nameWrapper.style.display = 'none'; 
             }
 
             // 2. Handle Popup Bubble Personalization
@@ -184,8 +184,8 @@
 
             // 3. Handle WhatsApp Message Personalization
             const waLink = document.getElementById('wa-dynamic-link');
-            const waName = firstName ? firstName : "me";
-            const message = `Hey Chris! It's ${waName} I just signed up for the 14-Day Fundamentals waitlist. I'm ready to get started—what should I do first?`;
+            const waIntro = firstName ? `It's ${firstName} ` : "";
+            const message = `Hey Chris! ${waIntro}I just signed up for the 14-Day Fundamentals waitlist. I'm ready to get started—what should I do first?`;
             waLink.href = `https://wa.me/447925116794?text=${encodeURIComponent(message)}`;
 
             // 4. Scroll-Triggered UI (at 60% depth)
