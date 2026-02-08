@@ -4,29 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>THE 14-DAY FUNDAMENTALS | Body Software Update</title>
-
-    <meta property="og:title" content="The 14-Day Fundamentals | Body Software Update">
-    <meta property="og:description" content="A 2-week minimalist reset for everyday men and women. Fix your foundation and train unconventional.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://coachchriscrc.github.io/14dayfundamentals-lp/">
-
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
         :root { --brand-sage: #87ae73; }
         body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; overflow-x: hidden; scroll-padding-top: 7rem; background-color: #0a0a0a; }
-        .glass-card { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .glass-card { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37); }
         .glass-card-light { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2); }
         .text-brand-sage { color: var(--brand-sage); }
         .bg-brand-sage { background-color: var(--brand-sage); }
         .bg-blob { position: fixed; width: 500px; height: 500px; background: radial-gradient(circle, rgba(135, 174, 115, 0.15) 0%, rgba(0, 0, 0, 0) 70%); border-radius: 50%; z-index: -1; filter: blur(60px); }
-        .cta-button { transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); background: var(--brand-sage); color: white; border: none; display: inline-block; text-align: center; }
-        .cta-button:hover { transform: translateY(-3px) scale(1.02); filter: brightness(1.1); }
+        .cta-button { transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); background: var(--brand-sage); color: white; box-shadow: 0 4px 15px rgba(135, 174, 115, 0.3); cursor: pointer; border: none; display: inline-block; text-align: center; }
+        .cta-button:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 8px 25px rgba(135, 174, 115, 0.5); filter: brightness(1.1); }
         .header-glass { background: rgba(10, 10, 10, 0.8); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
         @keyframes pulse-arrow { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
         .animate-arrow { animation: pulse-arrow 1.4s infinite ease-in-out; }
         .form-input { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); color: white; transition: all 0.3s ease; }
-        .form-input:focus { outline: none; border-color: var(--brand-sage); background: rgba(255, 255, 255, 0.08); }
+        .form-input:focus { outline: none; border-color: var(--brand-sage); background: rgba(255, 255, 255, 0.08); box-shadow: 0 0 0 4px rgba(135, 174, 115, 0.1); }
         .modal-overlay { background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(10px); display: none; opacity: 0; transition: opacity 0.3s ease; z-index: 200; }
         .modal-overlay.active { display: flex; opacity: 1; }
         .modal-inner { transform: translateY(20px); opacity: 0; transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); }
@@ -35,68 +29,32 @@
 </head>
 <body class="text-white antialiased">
     <div class="bg-blob top-[-10%] left-[-10%]"></div>
-    <div class="bg-blob bottom-[10%] right-[-5%]" style="background: radial-gradient(circle, rgba(135, 174, 115, 0.1) 0%, rgba(0, 0, 0, 0) 70%);"></div>
-
-    <header class="sticky top-0 z-50 header-glass p-4">
-        <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <div class="text-left leading-none">
-                <div class="text-xl sm:text-2xl font-black uppercase tracking-tighter">14-DAY FUNDAMENTALS</div>
-                <div class="flex flex-col text-[10px] font-bold uppercase text-neutral-400 mt-2 tracking-widest leading-normal">
-                    <span>COACH CHRIS</span><span>CIRCULAR ROOTS COACHING</span>
-                </div>
-            </div>
-            <div class="flex flex-col space-y-3">
-                <a href="#signup" class="w-36 sm:w-44 text-center px-4 py-3.5 text-[11px] uppercase font-extrabold bg-brand-sage text-white rounded-xl tracking-wider">CLAIM YOUR SPOT</a>
-            </div>
-        </div>
-    </header>
-
-    <section class="min-h-[85vh] flex flex-col items-start justify-center px-4 py-20">
-        <div class="max-w-6xl mx-auto w-full">
-            <h1 class="text-5xl sm:text-6xl md:text-8xl font-black leading-[0.9] mb-10 uppercase tracking-tighter">
-                Most fitness journeys <span class="text-brand-sage">stall out early</span>. Let's fix your foundation first.
-            </h1>
-            <p class="text-xl sm:text-2xl font-light italic mt-4 max-w-4xl text-neutral-300 border-l-2 border-brand-sage pl-6">
-                You wouldn't try to build a second story on a house with a cracked foundation. Stop piling on more intensity and start reinforcing the structure.
-            </p>
-        </div>
-    </section>
-
-    <section id="signup" class="py-32 px-4 sm:px-6">
-        <div class="max-w-4xl mx-auto glass-card rounded-[3rem] p-12 sm:p-20 text-center relative overflow-hidden">
-            <p class="text-4xl sm:text-5xl font-black mb-8 uppercase text-white leading-tight tracking-tighter">
-                Time to establish a <br><span class="text-brand-sage">better baseline</span>.
-            </p>
-            <button onclick="openModal()" class="cta-button px-14 py-6 font-black text-2xl uppercase tracking-tighter rounded-2xl">JOIN THE 14-DAY RESET</button>
-        </div>
-    </section>
-
     <div id="comingSoonModal" class="modal-overlay fixed inset-0 items-center justify-center p-4" onclick="closeModalOnOverlay(event)">
-        <div class="modal-inner max-w-lg w-full glass-card p-10 rounded-[2rem] text-center relative">
-            <button onclick="closeModal()" class="absolute top-6 right-6 text-neutral-500 hover:text-white transition p-2">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-            </button>
-            <form id="signupForm" action="https://formbold.com/s/9gDBV" method="POST" class="text-left space-y-4 pt-8">
-                <div>
-                    <label class="block text-[10px] font-bold uppercase tracking-widest text-neutral-500 mb-2">Full Name</label>
-                    <input type="text" id="userNameInput" name="name" required placeholder="Enter your name" class="form-input w-full px-5 py-4 rounded-xl text-sm font-medium">
-                </div>
-                <div>
-                    <label class="block text-[10px] font-bold uppercase tracking-widest text-neutral-500 mb-2">Email Address</label>
-                    <input type="email" name="email" required placeholder="Enter your email" class="form-input w-full px-5 py-4 rounded-xl text-sm font-medium">
-                </div>
-                <input type="hidden" name="subject" value="New 14-Day Fundamentals Waitlist Sign-up">
-                <button type="submit" class="cta-button w-full py-5 mt-4 font-black text-sm uppercase tracking-widest rounded-xl">RESERVE MY SPACE</button>
-            </form>
+        <div class="modal-inner max-w-lg w-full glass-card p-10 sm:p-14 rounded-[2rem] text-center relative">
+            <button onclick="closeModal()" class="absolute top-6 right-6 text-neutral-500 hover:text-white transition p-2"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></button>
+            <div class="mb-8">
+                <div class="text-[11px] font-black uppercase tracking-[0.4em] text-brand-sage mb-6">Join the Waitlist</div>
+                <h2 class="text-4xl font-black uppercase tracking-tighter text-white mb-6 leading-none">Secure your <br>spot today.</h2>
+                <p class="text-neutral-400 text-lg font-light italic leading-relaxed">I limit group sizes to ensure quality. Drop your details below to be first in line when the next intake opens.</p>
+            </div>
+            <div class="pt-8 border-t border-white/10">
+                <form id="signupForm" action="https://formbold.com/s/9gDBV" method="POST" class="text-left space-y-4">
+                    <div>
+                        <label class="block text-[10px] font-bold uppercase tracking-widest text-neutral-500 mb-2 ml-1">Full Name</label>
+                        <input type="text" id="userNameInput" name="name" required placeholder="Enter your name" class="form-input w-full px-5 py-4 rounded-xl text-sm font-medium">
+                    </div>
+                    <div>
+                        <label class="block text-[10px] font-bold uppercase tracking-widest text-neutral-500 mb-2 ml-1">Email Address</label>
+                        <input type="email" name="email" required placeholder="Enter your email" class="form-input w-full px-5 py-4 rounded-xl text-sm font-medium">
+                    </div>
+                    <input type="hidden" name="subject" value="New 14-Day Fundamentals Waitlist Sign-up">
+                    <button type="submit" class="cta-button w-full py-5 mt-4 font-black text-sm uppercase tracking-widest rounded-xl transition shadow-lg shadow-brand-sage/20 text-center">RESERVE MY SPACE</button>
+                </form>
+            </div>
         </div>
     </div>
 
     <script>
-        const modal = document.getElementById('comingSoonModal');
-        function openModal() { modal.style.display = 'flex'; setTimeout(() => modal.classList.add('active'), 10); document.body.style.overflow = 'hidden'; }
-        function closeModal() { modal.classList.remove('active'); setTimeout(() => modal.style.display = 'none', 300); document.body.style.overflow = ''; }
-        function closeModalOnOverlay(e) { if (e.target === modal) closeModal(); }
-
         const signupForm = document.getElementById('signupForm');
         signupForm.addEventListener('submit', function(e) {
             const fullName = document.getElementById('userNameInput').value;
@@ -104,10 +62,15 @@
             const redirectInput = document.createElement('input');
             redirectInput.type = 'hidden';
             redirectInput.name = '_next';
-            // CHANGE THIS TO YOUR ACTUAL THANK YOU PAGE URL
-            redirectInput.value = `${window.location.origin}/thank-you.html?first_name=${firstName}`;
+            // It will redirect to your thank you page and pass the name
+            redirectInput.value = window.location.href.replace('index.html', '') + `thank-you.html?first_name=${firstName}`;
             signupForm.appendChild(redirectInput);
         });
+
+        // Your original Modal and Scroll scripts
+        function openModal() { document.getElementById('comingSoonModal').style.display = 'flex'; setTimeout(() => document.getElementById('comingSoonModal').classList.add('active'), 10); document.body.style.overflow = 'hidden'; }
+        function closeModal() { document.getElementById('comingSoonModal').classList.remove('active'); setTimeout(() => document.getElementById('comingSoonModal').style.display = 'none', 300); document.body.style.overflow = ''; }
+        function closeModalOnOverlay(e) { if (e.target === document.getElementById('comingSoonModal')) closeModal(); }
     </script>
 </body>
 </html>
