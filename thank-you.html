@@ -171,7 +171,7 @@
             const popup = document.getElementById('wa-popup');
             popup.innerHTML = `Thanks for joining, ${firstName}! Send 'Hey' to ask me anything or get the Tactical Frog video guide. <div class="absolute -bottom-2 right-6 w-4 h-4 bg-white rotate-45"></div>`;
 
-            // Update WhatsApp link with name
+            // Update WhatsApp link with ONLY the name personalized, message remains original
             const waLink = document.getElementById('wa-dynamic-link');
             const message = `Hey Chris! This is ${firstName}. I just signed up for the 14-Day Fundamentals waitlist. Could you send over that Tactical Frog video you mentioned?`;
             waLink.href = `https://wa.me/447925116794?text=${encodeURIComponent(message)}`;
