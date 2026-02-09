@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>THE 14-DAY FUNDAMENTALS | Body Software Update</title>
 
-    <!-- Social Meta Tags -->
     <meta property="og:title" content="The 14-Day Fundamentals | Body Software Update">
     <meta property="og:description" content="A 2-week minimalist reset for everyday men and women. Fix your foundation and train unconventional.">
     <meta property="og:type" content="website">
@@ -289,7 +288,6 @@
         </div>
     </footer>
 
-    <!-- Enrollment Modal -->
     <div id="comingSoonModal" class="modal-overlay fixed inset-0 items-center justify-center p-4" onclick="closeModalOnOverlay(event)">
         <div class="modal-inner max-w-lg w-full glass-card p-10 sm:p-14 rounded-[2rem] text-center relative">
             <button onclick="closeModal()" class="absolute top-6 right-6 text-neutral-500 hover:text-white transition p-2">
@@ -301,10 +299,12 @@
                 <p class="text-neutral-400 text-lg font-light italic leading-relaxed">I limit group sizes to ensure quality. Drop your details below to be first in line when the next intake opens.</p>
             </div>
             <div class="pt-8 border-t border-white/10">
-                <form action="https://formbold.com/s/9gDBV" method="POST" class="text-left space-y-4">
+                <form id="signupForm" action="https://formbold.com/s/9gDBV" method="POST" class="text-left space-y-4">
+                    <input type="hidden" id="redirectAttr" name="_next" value="">
+                    
                     <div>
                         <label class="block text-[10px] font-bold uppercase tracking-widest text-neutral-500 mb-2 ml-1">Full Name</label>
-                        <input type="text" name="name" required placeholder="Enter your name" class="form-input w-full px-5 py-4 rounded-xl text-sm font-medium">
+                        <input type="text" id="userNameInput" name="first_name" required placeholder="Enter your name" class="form-input w-full px-5 py-4 rounded-xl text-sm font-medium">
                     </div>
                     <div>
                         <label class="block text-[10px] font-bold uppercase tracking-widest text-neutral-500 mb-2 ml-1">Email Address</label>
@@ -317,7 +317,6 @@
         </div>
     </div>
 
-    <!-- WhatsApp Chat Widget -->
     <div class="fixed bottom-6 right-6 z-[100]">
         <a href="https://wa.me/447925116794?text=Hi%20Chris%2C%20I'm%20looking%20at%20the%2014-Day%20Fundamentals.%20I%20had%20a%20quick%20question%20about%20the%20program..." 
            target="_blank" 
@@ -345,6 +344,21 @@
                         }
                     }
                 });
+            });
+
+            // Name Transfer Script - MODIFIED FOR FORMBOLD
+            const signupForm = document.getElementById('signupForm');
+            signupForm.addEventListener('submit', function(e) {
+                const fullName = document.getElementById('userNameInput').value;
+                const firstName = fullName.split(' ')[0];
+                const redirectInput = document.getElementById('redirectAttr');
+                
+                // Construct the absolute path to thank-you.html
+                let thankYouPath = window.location.origin + window.location.pathname.replace('index.html', '');
+                if (!thankYouPath.endsWith('/')) thankYouPath += '/';
+                
+                // This tells FormBold where to send the user + adds the name data
+                redirectInput.value = thankYouPath + `thank-you.html?first_name=${firstName}`;
             });
         });
 
