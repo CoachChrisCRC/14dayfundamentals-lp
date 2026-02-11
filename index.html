@@ -87,6 +87,22 @@
         .animate-arrow {
             animation: pulse-arrow 1.4s infinite ease-in-out;
         }
+
+        /* Testimonial Slider Styles */
+        .testimonial-slider {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+        }
+        .testimonial-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            width: 100%;
+        }
+        .testimonial-slide {
+            min-width: 100%;
+            flex-shrink: 0;
+        }
     </style>
 </head>
 <body class="text-white antialiased">
@@ -292,6 +308,78 @@
             </div>
         </section>
 
+        <section class="py-24 px-4 sm:px-6">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl sm:text-4xl font-black uppercase tracking-tighter mb-2">Proof from the <span class="text-brand-sage">Community</span></h2>
+                    <p class="text-neutral-500 uppercase tracking-widest font-bold text-[10px]">Real people, real foundation updates</p>
+                </div>
+
+                <div class="testimonial-slider glass-card rounded-[2rem] p-8 sm:p-12 border-white/5">
+                    <div class="testimonial-track" id="testimonialTrack">
+                        <div class="testimonial-slide text-center px-4">
+                            <div class="text-brand-sage mb-6 flex justify-center gap-1">
+                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                            </div>
+                            <p class="text-xl sm:text-2xl italic font-light text-neutral-200 leading-relaxed mb-8">
+                                "Chris has a unique skill for identifying the small, fundamental improvements that create huge results. He helped me fix my foundation and achieve progress I didn't think was possible."
+                            </p>
+                            <p class="uppercase font-black tracking-widest text-xs text-white">- Paul "Spider" Chan</p>
+                        </div>
+
+                        <div class="testimonial-slide text-center px-4">
+                            <div class="text-brand-sage mb-6 flex justify-center gap-1">
+                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                            </div>
+                            <p class="text-xl sm:text-2xl italic font-light text-neutral-200 leading-relaxed mb-8">
+                                "I'm over the moon with the results. Chris knows exactly how to structure sessions around your specific needs—perfect for anyone wanting to reset their movement patterns properly."
+                            </p>
+                            <p class="uppercase font-black tracking-widest text-xs text-white">- Suzanne Thompson</p>
+                        </div>
+
+                        <div class="testimonial-slide text-center px-4">
+                            <div class="text-brand-sage mb-6 flex justify-center gap-1">
+                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                            </div>
+                            <p class="text-xl sm:text-2xl italic font-light text-neutral-200 leading-relaxed mb-8">
+                                "Chris quickly identified how prioritizing functional balance and posture could improve my movement. It’s a smart reset that is well worth the investment of time!"
+                            </p>
+                            <p class="uppercase font-black tracking-widest text-xs text-white">- Lisa Watson</p>
+                        </div>
+
+                        <div class="testimonial-slide text-center px-4">
+                            <div class="text-brand-sage mb-6 flex justify-center gap-1">
+                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                            </div>
+                            <p class="text-xl sm:text-2xl italic font-light text-neutral-200 leading-relaxed mb-8">
+                                "Chris taught me great technique and pushed me to find a new baseline. Highly recommended for anyone ready to stop the guesswork and finally up their game."
+                            </p>
+                            <p class="uppercase font-black tracking-widest text-xs text-white">- Vicky Jackson</p>
+                        </div>
+
+                        <div class="testimonial-slide text-center px-4">
+                            <div class="text-brand-sage mb-6 flex justify-center gap-1">
+                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                            </div>
+                            <p class="text-xl sm:text-2xl italic font-light text-neutral-200 leading-relaxed mb-8">
+                                "The living embodiment of positive, goal-driven wellbeing. Chris knows exactly how to help you reach your targets if you're ready to commit to the fundamentals."
+                            </p>
+                            <p class="uppercase font-black tracking-widest text-xs text-white">- Kelly Coats</p>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-center gap-4 mt-10">
+                        <button id="prevBtn" class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-white/5 transition-colors">
+                            <svg class="w-5 h-5 text-brand-sage" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                        </button>
+                        <button id="nextBtn" class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-white/5 transition-colors">
+                            <svg class="w-5 h-5 text-brand-sage" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="recap" class="py-24 px-4 sm:px-6 bg-white/[0.02]">
             <div class="max-w-4xl mx-auto">
                 <div class="text-center mb-16">
@@ -403,6 +491,7 @@
         document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('current-year').textContent = new Date().getFullYear();
 
+            // Smooth Scroll
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
                     const hash = this.getAttribute('href');
@@ -414,6 +503,27 @@
                         }
                     }
                 });
+            });
+
+            // Testimonial Slider Logic
+            const track = document.getElementById('testimonialTrack');
+            const slides = Array.from(track.children);
+            const nextButton = document.getElementById('nextBtn');
+            const prevButton = document.getElementById('prevBtn');
+            let currentIdx = 0;
+
+            const updateSlider = () => {
+                track.style.transform = `translateX(-${currentIdx * 100}%)`;
+            };
+
+            nextButton.addEventListener('click', () => {
+                currentIdx = (currentIdx + 1) % slides.length;
+                updateSlider();
+            });
+
+            prevButton.addEventListener('click', () => {
+                currentIdx = (currentIdx - 1 + slides.length) % slides.length;
+                updateSlider();
             });
         });
     </script>
