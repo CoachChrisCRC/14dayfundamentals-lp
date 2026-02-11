@@ -87,6 +87,15 @@
         .animate-arrow {
             animation: pulse-arrow 1.4s infinite ease-in-out;
         }
+
+        /* Testimonial Slider Styles */
+        .testimonial-slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .testimonial-slide {
+            min-width: 100%;
+        }
     </style>
 </head>
 <body class="text-white antialiased">
@@ -292,6 +301,85 @@
             </div>
         </section>
 
+        <section class="py-24 px-4 sm:px-6 bg-white/[0.01] border-t border-white/5 overflow-hidden">
+            <div class="max-w-6xl mx-auto">
+                <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+                    <div>
+                        <div class="text-brand-sage font-black tracking-[.3em] uppercase text-xs mb-4">USER FEEDBACK</div>
+                        <h2 class="text-4xl sm:text-5xl font-black uppercase tracking-tighter leading-none">THE HARDWARE <br><span class="text-brand-sage">REPORT.</span></h2>
+                    </div>
+                    <div class="flex gap-2">
+                        <button onclick="prevSlide()" class="p-4 rounded-xl glass-card hover:bg-white/10 transition group">
+                            <svg class="w-6 h-6 text-brand-sage group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M15 19l-7-7 7-7"/></svg>
+                        </button>
+                        <button onclick="nextSlide()" class="p-4 rounded-xl glass-card hover:bg-white/10 transition group">
+                            <svg class="w-6 h-6 text-brand-sage group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7"/></svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="relative overflow-hidden">
+                    <div id="testimonialSlider" class="testimonial-slider">
+                        <div class="testimonial-slide px-2">
+                            <div class="glass-card p-10 sm:p-16 rounded-[2.5rem] border-brand-sage/20 h-full flex flex-col justify-center">
+                                <p class="text-2xl sm:text-3xl font-light italic leading-relaxed text-neutral-200 mb-8">
+                                    "Chris genuinely wants you to succeed. He has a unique skill for identifying the small foundation improvements that yield huge results, helping me move in ways I didn't think were possible."
+                                </p>
+                                <div class="flex items-center gap-4">
+                                    <div class="w-12 h-[1px] bg-brand-sage"></div>
+                                    <p class="uppercase font-black tracking-widest text-sm text-brand-sage">Paul "Spider" Chan</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-slide px-2">
+                            <div class="glass-card p-10 sm:p-16 rounded-[2.5rem] border-brand-sage/20 h-full flex flex-col justify-center">
+                                <p class="text-2xl sm:text-3xl font-light italic leading-relaxed text-neutral-200 mb-8">
+                                    "He quickly identified how these fundamental shifts could improve my balance and posture. It isn't an easy ride—but fixing the foundation is well worth the trip!"
+                                </p>
+                                <div class="flex items-center gap-4">
+                                    <div class="w-12 h-[1px] bg-brand-sage"></div>
+                                    <p class="uppercase font-black tracking-widest text-sm text-brand-sage">Lisa Watson</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-slide px-2">
+                            <div class="glass-card p-10 sm:p-16 rounded-[2.5rem] border-brand-sage/20 h-full flex flex-col justify-center">
+                                <p class="text-2xl sm:text-3xl font-light italic leading-relaxed text-neutral-200 mb-8">
+                                    "I'm over the moon with the structure. Chris knows exactly where your mobility sticking points are and knows how to tailor the sessions to fix them."
+                                </p>
+                                <div class="flex items-center gap-4">
+                                    <div class="w-12 h-[1px] bg-brand-sage"></div>
+                                    <p class="uppercase font-black tracking-widest text-sm text-brand-sage">Suzanne Thompson</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-slide px-2">
+                            <div class="glass-card p-10 sm:p-16 rounded-[2.5rem] border-brand-sage/20 h-full flex flex-col justify-center">
+                                <p class="text-2xl sm:text-3xl font-light italic leading-relaxed text-neutral-200 mb-8">
+                                    "Positive, goal-driven wellbeing in action. Chris knows exactly how to help you reach a better baseline if you're willing to invest the time into the fundamentals."
+                                </p>
+                                <div class="flex items-center gap-4">
+                                    <div class="w-12 h-[1px] bg-brand-sage"></div>
+                                    <p class="uppercase font-black tracking-widest text-sm text-brand-sage">Kelly Coats</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-slide px-2">
+                            <div class="glass-card p-10 sm:p-16 rounded-[2.5rem] border-brand-sage/20 h-full flex flex-col justify-center">
+                                <p class="text-2xl sm:text-3xl font-light italic leading-relaxed text-neutral-200 mb-8">
+                                    "Always encouraging. The energy Chris brings is infectious and it makes sticking to the daily routine something everyone actually looks forward to every time."
+                                </p>
+                                <div class="flex items-center gap-4">
+                                    <div class="w-12 h-[1px] bg-brand-sage"></div>
+                                    <p class="uppercase font-black tracking-widest text-sm text-brand-sage">Kris McGough</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="recap" class="py-24 px-4 sm:px-6 bg-white/[0.02]">
             <div class="max-w-4xl mx-auto">
                 <div class="text-center mb-16">
@@ -400,6 +488,24 @@
     </div>
 
     <script>
+        let currentSlide = 0;
+        const slider = document.getElementById('testimonialSlider');
+        const totalSlides = 5;
+
+        function updateSlider() {
+            slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateSlider();
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            updateSlider();
+        }
+
         document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('current-year').textContent = new Date().getFullYear();
 
