@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YOU'RE ON THE LIST | Coach Chris</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script async src="https://tally.so/widgets/embed.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
         :root { --brand-sage: #87ae73; }
@@ -37,20 +38,8 @@
         }
         
         .animate-fade { animation: fadeIn 0.8s cubic-bezier(0.165, 0.84, 0.44, 1) forwards; }
-        
-        .whatsapp-bounce { animation: whatsapp-float 3s ease-in-out infinite; }
-        
-        @keyframes whatsapp-float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
 
-        /* Custom scrollbar */
-        ::-webkit-scrollbar { width: 5px; }
-        ::-webkit-scrollbar-track { background: #0a0a0a; }
-        ::-webkit-scrollbar-thumb { background: #333; border-radius: 10px; }
-
-        /* Unified WhatsApp Logic Styles from Landing Page */
+        /* Unified WhatsApp Logic Styles */
         #whatsapp-popup {
             background: rgba(20, 20, 20, 0.9);
             backdrop-filter: blur(12px);
@@ -62,11 +51,7 @@
             user-select: none;
             will-change: transform, opacity;
         }
-        #whatsapp-popup.visible {
-            opacity: 1;
-            transform: translateY(0) scale(1);
-            pointer-events: auto;
-        }
+        #whatsapp-popup.visible { opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
         #whatsapp-popup.swipe-right { transform: translateX(120%) rotate(10deg); opacity: 0; }
         #whatsapp-popup.swipe-left { transform: translateX(-120%) rotate(-10deg); opacity: 0; }
 
@@ -75,10 +60,7 @@
             opacity: 0;
             transform: scale(0);
         }
-        #whatsapp-badge.active {
-            opacity: 1;
-            transform: scale(1);
-        }
+        #whatsapp-badge.active { opacity: 1; transform: scale(1); }
 
         .whatsapp-glow {
             box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.05), 0 0 20px rgba(135, 174, 115, 0.4);
@@ -106,6 +88,15 @@
             I’ve received your details<span id="nameWrapper">, <span id="userName" class="text-white font-bold"></span></span>. When a spot opens up in the next intake, you'll be the first to know. 
         </p>
 
+        <button 
+            data-tally-open="RG54dp" 
+            data-tally-layout="modal" 
+            data-tally-hide-title="1" 
+            data-tally-emoji-text="🎯" 
+            data-tally-emoji-animation="heart-beat"
+            class="hidden">
+        </button>
+
         <div class="mt-10 mb-10 p-6 sm:p-8 bg-brand-sage/5 border border-brand-sage/20 rounded-3xl text-left">
             <div class="flex items-center gap-3 mb-6">
                 <span class="flex h-3 w-3 rounded-full bg-brand-sage animate-pulse"></span>
@@ -113,52 +104,35 @@
             </div>
             
             <h3 class="text-xl font-black uppercase tracking-tight mb-4 text-white">First things first: Let's un-rust those hips</h3>
-            <p class="text-sm text-neutral-400 mb-8 leading-relaxed">
-                You don't need to wait for the intake to start feeling better. Try this 60-second move tomorrow morning—it’s the fastest way I know to unlock a stiff back.
-            </p>
+            <p class="text-sm text-neutral-400 mb-8 leading-relaxed">Try this 60-second move tomorrow morning—it’s the fastest way I know to unlock a stiff back.</p>
             
             <div class="space-y-6">
                 <div class="relative pl-6 border-l-2 border-white/10">
                     <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-neutral-800 border-2 border-neutral-600 flex items-center justify-center text-[8px] font-bold text-neutral-400">1</div>
-                    <h4 class="text-sm font-black uppercase text-white mb-2">Level 1: The Pivot (Safe Start)</h4>
-                    <p class="text-xs text-neutral-400 leading-relaxed">
-                        On all fours, place one hand behind your head. Touch your elbow to your opposite wrist, then rotate that elbow toward the sky. Breathe deep into the stretch.
-                    </p>
+                    <h4 class="text-sm font-black uppercase text-white mb-2">Level 1: The Pivot</h4>
+                    <p class="text-xs text-neutral-400 leading-relaxed">On all fours, place one hand behind your head. Touch elbow to opposite wrist, then rotate toward the sky.</p>
                 </div>
-
                 <div class="relative pl-6 border-l-2 border-brand-sage/30">
                     <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-brand-sage border-2 border-brand-sage/50 flex items-center justify-center text-[8px] font-bold text-white">2</div>
-                    <h4 class="text-sm font-black uppercase text-white mb-2">Level 2: Tactical Frog (Deep Update)</h4>
-                    <p class="text-xs text-neutral-400 leading-relaxed">
-                        Slide your knees out wide and sink your hips back. From this "Frog" position, perform the same rotation. You'll feel this one deep in the hip sockets.
-                    </p>
+                    <h4 class="text-sm font-black uppercase text-white mb-2">Level 2: Tactical Frog</h4>
+                    <p class="text-xs text-neutral-400 leading-relaxed">Slide knees out wide, sink hips back, and perform the same rotation. You'll feel this deep in the sockets.</p>
                 </div>
-            </div>
-
-            <div class="mt-8 pt-6 border-t border-white/5 text-[11px] italic text-neutral-500 leading-relaxed text-center">
-                "Go easy. We're just introducing your body to some new range."
             </div>
         </div>
 
         <div class="block p-8 glass-card rounded-2xl border border-white/5">
-            <span class="block text-brand-sage font-black uppercase text-[10px] tracking-[0.2em] mb-6 text-center">Check what we get up to</span>
+            <span class="block text-brand-sage font-black uppercase text-[10px] tracking-[0.2em] mb-6 text-center">Follow the journey</span>
             <div class="flex justify-center gap-12">
                 <a href="Https://instagram.com/chris.h_crc" target="_blank" class="flex flex-col items-center gap-3 group">
-                    <div class="w-14 h-14 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-brand-sage/20 transition-all text-neutral-400 group-hover:text-brand-sage flex-shrink-0">
-                        <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.27.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-                    </div>
-                    <span class="text-[10px] font-bold uppercase tracking-widest text-neutral-500 group-hover:text-white transition-colors">Instagram</span>
+                    <div class="w-14 h-14 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-brand-sage/20 transition-all text-neutral-400 group-hover:text-brand-sage"><svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.27.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></div>
+                    <span class="text-[10px] font-bold uppercase tracking-widest text-neutral-500">Instagram</span>
                 </a>
                 <a href="https://facebook.com/circularrootscoaching" target="_blank" class="flex flex-col items-center gap-3 group">
-                    <div class="w-14 h-14 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-brand-sage/20 transition-all text-neutral-400 group-hover:text-brand-sage flex-shrink-0">
-                        <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                    </div>
-                    <span class="text-[10px] font-bold uppercase tracking-widest text-neutral-500 group-hover:text-white transition-colors">Facebook</span>
+                    <div class="w-14 h-14 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-brand-sage/20 transition-all text-neutral-400 group-hover:text-brand-sage"><svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></div>
+                    <span class="text-[10px] font-bold uppercase tracking-widest text-neutral-500">Facebook</span>
                 </a>
             </div>
         </div>
-
-        <p class="mt-12 text-[10px] font-black uppercase text-neutral-600 tracking-[0.4em]">Fitter. Stronger. Better.</p>
     </div>
 
     <div class="fixed bottom-6 right-6 z-[100] flex flex-col items-end">
@@ -166,30 +140,21 @@
             <button id="close-whatsapp" class="absolute -top-2 -left-2 w-6 h-6 bg-black text-white rounded-full flex items-center justify-center hover:bg-neutral-800 transition shadow-lg z-10 border border-white/10">
                 <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M6 18L18 6M6 6l12 12"/></svg>
             </button>
-            
             <div class="flex items-start space-x-3 text-left">
                 <div class="w-10 h-10 rounded-full overflow-hidden flex-shrink-0 border border-brand-sage/50">
                     <img src="https://raw.githubusercontent.com/CoachChrisCRC/14dayfundamentals-lp/refs/heads/main/coachchrisbio.jpg" alt="Coach Chris" class="w-full h-full object-cover">
                 </div>
                 <div>
                     <p class="text-brand-sage text-[10px] font-black uppercase tracking-widest leading-none mb-1">Coach Chris</p>
-                    <p id="popup-text" class="text-neutral-200 text-[11px] leading-relaxed italic">
-                        </p>
+                    <p id="popup-text" class="text-neutral-200 text-[11px] leading-relaxed italic"></p>
                 </div>
             </div>
-            <div class="absolute -bottom-2 right-6 w-0 h-0 border-l-[10px] border-l-transparent border-r-[10px] border-r-transparent border-t-[10px] border-t-white/10 backdrop-blur-md"></div>
         </div>
 
-        <a id="wa-dynamic-link" href="#" 
-           target="_blank" 
-           class="flex items-center group relative">
-            <div id="whatsapp-badge" class="absolute -top-1 -right-1 w-5 h-5 bg-white text-brand-sage rounded-full flex items-center justify-center text-[10px] font-black shadow-lg z-10 border border-brand-sage/20">1</div>
-            
-            <div class="w-14 h-14 bg-brand-sage rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform duration-300 relative whatsapp-glow">
-                <div class="absolute inset-0 rounded-full bg-brand-sage animate-ping opacity-20"></div>
-                <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 448 512">
-                    <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-5.5-2.8-23.2-8.5-44.2-27.1-16.4-14.6-27.4-32.7-30.6-38.2-3.2-5.6-.3-8.6 2.4-11.3 2.5-2.4 5.6-6.5 8.3-9.8 2.8-3.2 3.7-5.5 5.5-9.3 1.9-3.7.9-6.9-.5-9.8-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 13.2 5.8 23.5 9.2 31.5 11.8 13.3 4.2 25.4 3.6 35 2.2 10.7-1.5 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
-                </svg>
+        <a id="wa-dynamic-link" href="#" target="_blank" class="flex items-center group relative">
+            <div id="whatsapp-badge" class="absolute -top-1 -right-1 w-5 h-5 bg-white text-brand-sage rounded-full flex items-center justify-center text-[10px] font-black shadow-lg z-10">1</div>
+            <div class="w-14 h-14 bg-brand-sage rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform relative whatsapp-glow">
+                <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-5.5-2.8-23.2-8.5-44.2-27.1-16.4-14.6-27.4-32.7-30.6-38.2-3.2-5.6-.3-8.6 2.4-11.3 2.5-2.4 5.6-6.5 8.3-9.8 2.8-3.2 3.7-5.5 5.5-9.3 1.9-3.7.9-6.9-.5-9.8-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 13.2 5.8 23.5 9.2 31.5 11.8 13.3 4.2 25.4 3.6 35 2.2 10.7-1.5 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
             </div>
         </a>
     </div>
@@ -198,8 +163,10 @@
         document.addEventListener('DOMContentLoaded', () => {
             const params = new URLSearchParams(window.location.search);
             const firstName = params.get('first_name');
+            const goal = params.get('goal');
+            const why = params.get('why');
             
-            // 1. Main Text Personalization
+            // 1. Name Personalization
             const userNameEl = document.getElementById('userName');
             const nameWrapper = document.getElementById('nameWrapper');
             if (firstName) {
@@ -217,61 +184,36 @@
             
             let isClosedManually = false;
 
-            // Personalize Popup Content
-            if (firstName) {
-                popupText.textContent = `Thanks for joining, ${firstName}! I'd love to know what you're training for. Message me to say hi and ask any questions you have. I’ll send over those mobility videos too! — Chris`;
-            } else {
-                popupText.textContent = `Thanks for joining! I'd love to know what you're training for. Message me to say hi and ask any questions you have. I’ll send over those mobility videos too! — Chris`;
-            }
+            // Popup Text
+            popupText.textContent = `Thanks for joining${firstName ? ', ' + firstName : ''}! I'd love to hear more about your focus on ${goal || 'movement'}. Message me to grab those mobility videos! — Chris`;
 
-            // Updated Pre-filled Message (Blended 1 & 3, leaning toward 1)
-            const waIntro = firstName ? `${firstName} here. ` : "";
-            const message = `Hey Chris! ${waIntro}I just joined the 14-Day Fundamentals Waitlist and I’m keen to grab those mobility videos! I picked my training focus because I’m currently struggling with [Frustration/Issue] and want to get it sorted. Quick question before Day 1: `;
+            // 3. THE CUSTOM PRE-FILLED MESSAGE
+            const namePart = firstName ? `${firstName} here. ` : "";
+            const goalPart = goal ? `I picked "${goal}" as my focus.` : "I just joined the waitlist.";
+            const whyPart = why ? ` This is important to me because: ${why}` : "";
+
+            const message = `Hey Chris! ${namePart}I just joined the 14-Day Fundamentals Waitlist. I'm looking forward to starting and keen to get those mobility videos you mentioned.\n\n${goalPart}${whyPart}\n\nAlso, quick question before day 1: `;
             
             waLink.href = `https://wa.me/447925116794?text=${encodeURIComponent(message)}`;
 
-            // Scroll Tracking
+            // Scroll Logic
             window.addEventListener('scroll', () => {
-                const winHeight = window.innerHeight;
-                const docHeight = document.documentElement.scrollHeight;
                 const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-                const scrollPercent = (scrollTop / (docHeight - winHeight)) * 100;
+                const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+                const scrollPercent = (scrollTop / docHeight) * 100;
 
-                if (scrollPercent >= 60 && !isClosedManually) {
-                    whatsappPopup.classList.add('visible');
-                } else {
-                    whatsappPopup.classList.remove('visible');
-                }
+                if (scrollPercent >= 60 && !isClosedManually) whatsappPopup.classList.add('visible');
+                else whatsappPopup.classList.remove('visible');
 
-                if (scrollPercent >= 60) {
-                    whatsappBadge.classList.add('active');
-                } else {
-                    whatsappBadge.classList.remove('active');
-                }
+                if (scrollPercent >= 60) whatsappBadge.classList.add('active');
+                else whatsappBadge.classList.remove('active');
             });
 
-            // Manual Close Logic
             closeWhatsapp.addEventListener('click', (e) => {
                 e.preventDefault();
                 isClosedManually = true;
                 whatsappPopup.classList.remove('visible');
             });
-
-            // Swipe Logic
-            let touchStartX = 0;
-            whatsappPopup.addEventListener('touchstart', (e) => {
-                touchStartX = e.changedTouches[0].screenX;
-            }, { passive: true });
-
-            whatsappPopup.addEventListener('touchend', (e) => {
-                const touchEndX = e.changedTouches[0].screenX;
-                const diffX = touchEndX - touchStartX;
-                if (Math.abs(diffX) > 50) {
-                    isClosedManually = true;
-                    if (diffX > 0) whatsappPopup.classList.add('swipe-right');
-                    else whatsappPopup.classList.add('swipe-left');
-                }
-            }, { passive: true });
         });
     </script>
 </body>
