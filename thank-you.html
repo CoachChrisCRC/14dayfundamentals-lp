@@ -236,11 +236,17 @@
                 const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
                 const scrollPercent = (scrollTop / (docHeight - winHeight)) * 100;
 
+                // Popup shows/hides based on scroll AND manual close
                 if (scrollPercent >= 60 && !isClosedManually) {
                     whatsappPopup.classList.add('visible');
-                    whatsappBadge.classList.add('active');
-                } else if (scrollPercent < 60) {
+                } else {
                     whatsappPopup.classList.remove('visible');
+                }
+
+                // Badge visibility is independent of the manual close of the popup
+                if (scrollPercent >= 60) {
+                    whatsappBadge.classList.add('active');
+                } else {
                     whatsappBadge.classList.remove('active');
                 }
             });
