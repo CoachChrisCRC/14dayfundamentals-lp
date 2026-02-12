@@ -88,21 +88,22 @@
             animation: pulse-arrow 1.4s infinite ease-in-out;
         }
 
-        /* Slider Styles */
+        /* Testimonial Slider Styles */
         .testimonial-container {
             position: relative;
+            width: 100%;
             overflow: hidden;
+            touch-action: pan-y;
         }
+        .testimonial-wrapper {
+            display: flex;
+            transition: transform 0.5s ease-out;
+            cursor: grab;
+        }
+        .testimonial-wrapper:active { cursor: grabbing; }
         .testimonial-slide {
-            display: none;
-            animation: fadeIn 0.5s ease-in-out;
-        }
-        .testimonial-slide.active {
-            display: block;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
+            min-width: 100%;
+            padding: 0 10px;
         }
     </style>
 </head>
@@ -309,60 +310,79 @@
             </div>
         </section>
 
-        <section class="py-24 px-4 sm:px-6 bg-white/[0.01]">
+        <section class="py-24 px-4 sm:px-6">
             <div class="max-w-4xl mx-auto">
                 <div class="text-center mb-12">
-                    <h2 class="text-3xl sm:text-4xl font-black uppercase tracking-tighter mb-2">Proven <span class="text-brand-sage">Results.</span></h2>
-                    <p class="text-neutral-500 uppercase tracking-widest font-bold text-[10px]">Real people, real body software updates</p>
+                    <h2 class="text-3xl sm:text-4xl font-black uppercase tracking-tighter mb-4">What others say about <span class="text-brand-sage">the approach</span></h2>
                 </div>
 
-                <div class="glass-card rounded-[2.5rem] p-8 sm:p-16 relative testimonial-container">
-                    <div class="testimonial-slide active text-center">
-                        <p class="text-brand-sage font-black uppercase text-xs tracking-[0.2em] mb-6">Foundation Mastery</p>
-                        <p class="text-xl sm:text-2xl font-light italic leading-relaxed mb-8 text-neutral-200">
-                            "Chris has a unique skill for identifying the obvious technical improvements that create huge results. He helped me fix my foundation and achieve things I didn't think possible."
-                        </p>
-                        <p class="font-black uppercase tracking-tighter text-white">— Paul "Spider" Chan</p>
+                <div class="testimonial-container" id="testimonial-slider">
+                    <div class="testimonial-wrapper" id="testimonial-wrapper">
+                        <div class="testimonial-slide">
+                            <div class="glass-card p-8 sm:p-12 rounded-[2rem] text-center border-brand-sage/20">
+                                <p class="text-brand-sage font-black uppercase text-xs tracking-widest mb-6 italic">Body Software Update</p>
+                                <p class="text-xl sm:text-2xl font-medium italic text-neutral-200 leading-relaxed mb-8">
+                                    "Chris has a unique skill for identifying the small, obvious improvements that create huge results. He helped me fix my foundation and achieve things I didn't think possible."
+                                </p>
+                                <div class="w-12 h-1 bg-brand-sage mx-auto mb-4 rounded-full"></div>
+                                <p class="font-black uppercase tracking-tighter text-white">Paul "Spider" Chan</p>
+                                <p class="text-[10px] uppercase tracking-[0.2em] text-neutral-500 mt-1">Foundation Specialist</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-slide">
+                            <div class="glass-card p-8 sm:p-12 rounded-[2rem] text-center border-brand-sage/20">
+                                <p class="text-brand-sage font-black uppercase text-xs tracking-widest mb-6 italic">Personalized Reset</p>
+                                <p class="text-xl sm:text-2xl font-medium italic text-neutral-200 leading-relaxed mb-8">
+                                    "I'm over the moon with how I move now. Chris knows exactly how to structure the basics around your own body's strengths and weaknesses so you don't stall out."
+                                </p>
+                                <div class="w-12 h-1 bg-brand-sage mx-auto mb-4 rounded-full"></div>
+                                <p class="font-black uppercase tracking-tighter text-white">Suzanne Thompson</p>
+                                <p class="text-[10px] uppercase tracking-[0.2em] text-neutral-500 mt-1">Sustainable Results</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-slide">
+                            <div class="glass-card p-8 sm:p-12 rounded-[2rem] text-center border-brand-sage/20">
+                                <p class="text-brand-sage font-black uppercase text-xs tracking-widest mb-6 italic">Functional Balance</p>
+                                <p class="text-xl sm:text-2xl font-medium italic text-neutral-200 leading-relaxed mb-8">
+                                    "Chris quickly identified how fundamental strength could improve my running technique, balance, and posture. It isn't an easy ride—but well worth the trip to fix the basics!"
+                                </p>
+                                <div class="w-12 h-1 bg-brand-sage mx-auto mb-4 rounded-full"></div>
+                                <p class="font-black uppercase tracking-tighter text-white">Lisa Watson</p>
+                                <p class="text-[10px] uppercase tracking-[0.2em] text-neutral-500 mt-1">Movement Optimized</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-slide">
+                            <div class="glass-card p-8 sm:p-12 rounded-[2rem] text-center border-brand-sage/20">
+                                <p class="text-brand-sage font-black uppercase text-xs tracking-widest mb-6 italic">Technique Mastery</p>
+                                <p class="text-xl sm:text-2xl font-medium italic text-neutral-200 leading-relaxed mb-8">
+                                    "He taught me the right way to move and pushed me just enough to see real progress. Highly recommended for anyone ready to stop guessing and start building a real base."
+                                </p>
+                                <div class="w-12 h-1 bg-brand-sage mx-auto mb-4 rounded-full"></div>
+                                <p class="font-black uppercase tracking-tighter text-white">Vicky Jackson</p>
+                                <p class="text-[10px] uppercase tracking-[0.2em] text-neutral-500 mt-1">Fundamental Lifting</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-slide">
+                            <div class="glass-card p-8 sm:p-12 rounded-[2rem] text-center border-brand-sage/20">
+                                <p class="text-brand-sage font-black uppercase text-xs tracking-widest mb-6 italic">Goal-Driven Wellbeing</p>
+                                <p class="text-xl sm:text-2xl font-medium italic text-neutral-200 leading-relaxed mb-8">
+                                    "Chris knows exactly how to help you reach your goals if you invest the time. This reset is the perfect way to get your hardware and mindset back on track."
+                                </p>
+                                <div class="w-12 h-1 bg-brand-sage mx-auto mb-4 rounded-full"></div>
+                                <p class="font-black uppercase tracking-tighter text-white">Kelly Coats</p>
+                                <p class="text-[10px] uppercase tracking-[0.2em] text-neutral-500 mt-1">Reset Achieved</p>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="testimonial-slide text-center">
-                        <p class="text-brand-sage font-black uppercase text-xs tracking-[0.2em] mb-6">Functional Balance</p>
-                        <p class="text-xl sm:text-2xl font-light italic leading-relaxed mb-8 text-neutral-200">
-                            "Chris quickly identified how prioritizing joint health and posture would improve my movement. It isn't just about intensity; it's about building a frame that actually works."
-                        </p>
-                        <p class="font-black uppercase tracking-tighter text-white">— Lisa Watson</p>
-                    </div>
-
-                    <div class="testimonial-slide text-center">
-                        <p class="text-brand-sage font-black uppercase text-xs tracking-[0.2em] mb-6">Personalized Reset</p>
-                        <p class="text-xl sm:text-2xl font-light italic leading-relaxed mb-8 text-neutral-200">
-                            "I'm over the moon with how I move now. Chris knows exactly where your weaknesses are and structures the sessions to reinforce your baseline. An excellent motivator."
-                        </p>
-                        <p class="font-black uppercase tracking-tighter text-white">— Suzanne Thompson</p>
-                    </div>
-
-                    <div class="testimonial-slide text-center">
-                        <p class="text-brand-sage font-black uppercase text-xs tracking-[0.2em] mb-6">Goal-Driven Reset</p>
-                        <p class="text-xl sm:text-2xl font-light italic leading-relaxed mb-8 text-neutral-200">
-                            "Chris is the living embodiment of positive, goal-driven wellbeing. He knows exactly how to help you reset your habits if you're ready to invest the time."
-                        </p>
-                        <p class="font-black uppercase tracking-tighter text-white">— Kelly Coats</p>
-                    </div>
-
-                    <div class="testimonial-slide text-center">
-                        <p class="text-brand-sage font-black uppercase text-xs tracking-[0.2em] mb-6">Technique First</p>
-                        <p class="text-xl sm:text-2xl font-light italic leading-relaxed mb-8 text-neutral-200">
-                            "I feel more capable now than ever! Chris keeps the fundamentals engaging and encourages you to challenge your technique constantly so you can progress safely."
-                        </p>
-                        <p class="font-black uppercase tracking-tighter text-white">— Alana Giuliani</p>
-                    </div>
-
-                    <div class="flex justify-center gap-4 mt-12">
-                        <button onclick="prevSlide()" class="p-3 rounded-full glass-card hover:bg-white/10 transition-colors border-white/10 group">
-                            <svg class="w-5 h-5 text-brand-sage group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    <div class="flex justify-center items-center gap-8 mt-10">
+                        <button id="prev-btn" class="p-3 rounded-full border border-white/10 hover:bg-white/10 transition-colors group">
+                            <svg class="w-6 h-6 text-brand-sage group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M15 19l-7-7 7-7"/></svg>
                         </button>
-                        <button onclick="nextSlide()" class="p-3 rounded-full glass-card hover:bg-white/10 transition-colors border-white/10 group">
-                            <svg class="w-5 h-5 text-brand-sage group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                        <div class="flex gap-2" id="slider-dots">
+                            </div>
+                        <button id="next-btn" class="p-3 rounded-full border border-white/10 hover:bg-white/10 transition-colors group">
+                            <svg class="w-6 h-6 text-brand-sage group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7"/></svg>
                         </button>
                     </div>
                 </div>
@@ -477,26 +497,10 @@
     </div>
 
     <script>
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.testimonial-slide');
-
-        function showSlide(n) {
-            slides[currentSlide].classList.remove('active');
-            currentSlide = (n + slides.length) % slides.length;
-            slides[currentSlide].classList.add('active');
-        }
-
-        function nextSlide() {
-            showSlide(currentSlide + 1);
-        }
-
-        function prevSlide() {
-            showSlide(currentSlide - 1);
-        }
-
         document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('current-year').textContent = new Date().getFullYear();
 
+            // Smooth Scroll
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
                     const hash = this.getAttribute('href');
@@ -509,6 +513,93 @@
                     }
                 });
             });
+
+            // Testimonial Slider Logic
+            const wrapper = document.getElementById('testimonial-wrapper');
+            const slides = document.querySelectorAll('.testimonial-slide');
+            const dotsContainer = document.getElementById('slider-dots');
+            const prevBtn = document.getElementById('prev-btn');
+            const nextBtn = document.getElementById('next-btn');
+            
+            let currentIndex = 0;
+            let startX = 0;
+            let isDragging = false;
+            let currentTranslate = 0;
+            let prevTranslate = 0;
+
+            // Generate Dots
+            slides.forEach((_, i) => {
+                const dot = document.createElement('div');
+                dot.className = `w-2 h-2 rounded-full transition-all duration-300 ${i === 0 ? 'bg-brand-sage w-6' : 'bg-white/20'}`;
+                dot.addEventListener('click', () => goToSlide(i));
+                dotsContainer.appendChild(dot);
+            });
+
+            function updateSlider() {
+                wrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
+                const dots = dotsContainer.querySelectorAll('div');
+                dots.forEach((dot, i) => {
+                    if (i === currentIndex) {
+                        dot.classList.add('bg-brand-sage', 'w-6');
+                        dot.classList.remove('bg-white/20');
+                    } else {
+                        dot.classList.remove('bg-brand-sage', 'w-6');
+                        dot.classList.add('bg-white/20');
+                    }
+                });
+            }
+
+            function goToSlide(index) {
+                currentIndex = index;
+                updateSlider();
+            }
+
+            nextBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex + 1) % slides.length;
+                updateSlider();
+            });
+
+            prevBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+                updateSlider();
+            });
+
+            // Touch & Mouse Swipe
+            wrapper.addEventListener('touchstart', touchStart);
+            wrapper.addEventListener('touchend', touchEnd);
+            wrapper.addEventListener('touchmove', touchMove);
+            wrapper.addEventListener('mousedown', touchStart);
+            wrapper.addEventListener('mouseup', touchEnd);
+            wrapper.addEventListener('mouseleave', touchEnd);
+            wrapper.addEventListener('mousemove', touchMove);
+
+            function touchStart(e) {
+                startX = e.type.includes('touch') ? e.touches[0].clientX : e.clientX;
+                isDragging = true;
+                wrapper.style.transition = 'none';
+            }
+
+            function touchMove(e) {
+                if (!isDragging) return;
+                const currentX = e.type.includes('touch') ? e.touches[0].clientX : e.clientX;
+                const diff = currentX - startX;
+                const move = (-currentIndex * wrapper.offsetWidth) + diff;
+                wrapper.style.transform = `translateX(${move}px)`;
+            }
+
+            function touchEnd(e) {
+                if (!isDragging) return;
+                isDragging = false;
+                wrapper.style.transition = 'transform 0.5s ease-out';
+                const endX = e.type.includes('touch') ? e.changedTouches[0].clientX : e.clientX;
+                const diff = endX - startX;
+
+                if (Math.abs(diff) > 50) {
+                    if (diff > 0 && currentIndex > 0) currentIndex--;
+                    else if (diff < 0 && currentIndex < slides.length - 1) currentIndex++;
+                }
+                updateSlider();
+            }
         });
     </script>
 </body>
