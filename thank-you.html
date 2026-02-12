@@ -208,7 +208,7 @@
                 nameWrapper.style.display = 'none'; 
             }
 
-            // 2. WhatsApp Logic (Sync with LP)
+            // 2. WhatsApp Logic
             const whatsappPopup = document.getElementById('whatsapp-popup');
             const whatsappBadge = document.getElementById('whatsapp-badge');
             const closeWhatsapp = document.getElementById('close-whatsapp');
@@ -217,16 +217,16 @@
             
             let isClosedManually = false;
 
-            // Personalize Popup Content
+            // Personalize Popup Content (Option 1: Personal Connection)
             if (firstName) {
-                popupText.textContent = `Thanks for joining ${firstName}! Drop me a message to get your Tactical Frog video guide. — Chris`;
+                popupText.textContent = `Thanks for joining, ${firstName}! I'd love to know what you're training for. Message me to say hi and I’ll send over those mobility videos! — Chris`;
             } else {
-                popupText.textContent = `Thanks for joining! Drop me a message to get your Tactical Frog video guide. — Chris`;
+                popupText.textContent = `Thanks for joining! I'd love to know what you're training for. Message me to say hi and I’ll send over those mobility videos! — Chris`;
             }
 
-            // Personalize Link
+            // Personalize Link & Pre-filled Message
             const waIntro = firstName ? `It's ${firstName}. ` : "";
-            const message = `Hey Chris! ${waIntro}I just signed up for the 14-Day Fundamentals waitlist. I'm ready to get started—what should I do first?`;
+            const message = `Hey Chris! ${waIntro}I just joined the waitlist and wanted to say hi and grab those mobility videos. My main training goal right now is...`;
             waLink.href = `https://wa.me/447925116794?text=${encodeURIComponent(message)}`;
 
             // Scroll Tracking
@@ -236,14 +236,14 @@
                 const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
                 const scrollPercent = (scrollTop / (docHeight - winHeight)) * 100;
 
-                // Popup shows/hides based on scroll AND manual close
+                // Popup shows based on scroll AND manual close status
                 if (scrollPercent >= 60 && !isClosedManually) {
                     whatsappPopup.classList.add('visible');
                 } else {
                     whatsappPopup.classList.remove('visible');
                 }
 
-                // Badge visibility is independent of the manual close of the popup
+                // Badge visibility remains persistent once scroll threshold is met
                 if (scrollPercent >= 60) {
                     whatsappBadge.classList.add('active');
                 } else {
