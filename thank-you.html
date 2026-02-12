@@ -217,16 +217,17 @@
             
             let isClosedManually = false;
 
-            // Personalize Popup Content with your specific prompt
+            // Personalize Popup Content
             if (firstName) {
                 popupText.textContent = `Thanks for joining, ${firstName}! I'd love to know what you're training for. Message me to say hi and ask any questions you have. I’ll send over those mobility videos too! — Chris`;
             } else {
                 popupText.textContent = `Thanks for joining! I'd love to know what you're training for. Message me to say hi and ask any questions you have. I’ll send over those mobility videos too! — Chris`;
             }
 
-            // Personalize Link & Pre-filled Message
-            const waIntro = firstName ? `It's ${firstName}. ` : "";
-            const message = `Hey Chris! ${waIntro}I just joined the waitlist and wanted to say hi and grab those mobility videos. My main training goal right now is...`;
+            // Updated Pre-filled Message (Blended 1 & 3, leaning toward 1)
+            const waIntro = firstName ? `${firstName} here. ` : "";
+            const message = `Hey Chris! ${waIntro}I just joined the 14-Day Fundamentals Waitlist and I’m keen to grab those mobility videos! I picked my training focus because I’m currently struggling with [Frustration/Issue] and want to get it sorted. Quick question before Day 1: `;
+            
             waLink.href = `https://wa.me/447925116794?text=${encodeURIComponent(message)}`;
 
             // Scroll Tracking
@@ -236,14 +237,12 @@
                 const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
                 const scrollPercent = (scrollTop / (docHeight - winHeight)) * 100;
 
-                // Popup shows based on scroll AND manual close status
                 if (scrollPercent >= 60 && !isClosedManually) {
                     whatsappPopup.classList.add('visible');
                 } else {
                     whatsappPopup.classList.remove('visible');
                 }
 
-                // Badge visibility remains persistent once scroll threshold is met
                 if (scrollPercent >= 60) {
                     whatsappBadge.classList.add('active');
                 } else {
