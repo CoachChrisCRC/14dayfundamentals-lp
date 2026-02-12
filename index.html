@@ -106,13 +106,36 @@
             padding: 0 10px;
         }
 
-        /* WhatsApp Pop-up Animation */
-        @keyframes slideInUp {
-            from { opacity: 0; transform: translateY(20px) scale(0.95); }
-            to { opacity: 1; transform: translateY(0) scale(1); }
+        /* WhatsApp Advanced Logic Styles */
+        #whatsapp-popup {
+            transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.4s ease;
+            transform: translateY(20px) scale(0.9);
+            pointer-events: none;
+            opacity: 0;
+            user-select: none;
+            will-change: transform, opacity;
         }
-        .animate-popup {
-            animation: slideInUp 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+        #whatsapp-popup.visible {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            pointer-events: auto;
+        }
+        #whatsapp-popup.swipe-right { transform: translateX(120%) rotate(10deg); opacity: 0; }
+        #whatsapp-popup.swipe-left { transform: translateX(-120%) rotate(-10deg); opacity: 0; }
+
+        #whatsapp-badge {
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            opacity: 0;
+            transform: scale(0);
+        }
+        #whatsapp-badge.active {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .whatsapp-glow {
+            box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.05), 0 0 20px rgba(135, 174, 115, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
     </style>
 </head>
@@ -511,29 +534,37 @@
         </div>
     </footer>
 
-    <div class="fixed bottom-6 right-6 z-[100] flex flex-col items-end gap-3">
-        <div id="wa-popup" class="hidden glass-card p-5 rounded-[1.5rem] border-brand-sage/30 max-w-[280px] mb-2 animate-popup relative">
-            <div class="flex items-center gap-3 mb-2">
-                <div class="w-8 h-8 rounded-full overflow-hidden border border-brand-sage/50">
+    <div class="fixed bottom-6 right-6 z-[100] flex flex-col items-end">
+        <div id="whatsapp-popup" class="mb-4 mr-2 glass-card p-4 rounded-2xl border-brand-sage/30 max-w-[280px] origin-bottom-right relative touch-none">
+            <button id="close-whatsapp" class="absolute -top-2 -left-2 w-6 h-6 bg-black text-white rounded-full flex items-center justify-center hover:bg-neutral-800 transition shadow-lg z-10 border border-white/10">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
+            
+            <div class="flex items-start space-x-3">
+                <div class="w-10 h-10 rounded-full overflow-hidden flex-shrink-0 border border-brand-sage/50">
                     <img src="https://raw.githubusercontent.com/CoachChrisCRC/14dayfundamentals-lp/refs/heads/main/coachchrisbio.jpg" alt="Coach Chris" class="w-full h-full object-cover">
                 </div>
-                <div class="flex flex-col">
-                    <span class="text-[10px] font-black uppercase tracking-widest text-brand-sage leading-none">Coach Chris</span>
-                    <span class="text-[8px] text-neutral-500 font-bold uppercase mt-0.5">Online</span>
+                <div>
+                    <p class="text-brand-sage text-[10px] font-black uppercase tracking-widest leading-none mb-1">Coach Chris</p>
+                    <p class="text-neutral-200 text-[11px] leading-relaxed italic">
+                        "Hey! Quick question about how the Fundamentals work? Happy to help you figure out if this reset is the right fit. — Chris"
+                    </p>
                 </div>
             </div>
-            <p class="text-xs text-neutral-200 italic leading-relaxed">
-                "Hey! Just checking in — if you have any quick questions about how the Fundamentals work, just hit the button below and say hi."
-            </p>
-            <div class="absolute -bottom-2 right-6 w-4 h-4 glass-card border-none rotate-45 z-[-1]"></div>
+            <div class="absolute -bottom-2 right-6 w-0 h-0 border-l-[10px] border-l-transparent border-r-[10px] border-r-transparent border-t-[10px] border-t-white/10 backdrop-blur-md"></div>
         </div>
 
-        <a href="https://wa.me/447925116794?text=Hi%20Chris%2C%20I'm%20looking%20at%20the%2014-Day%20Fundamentals.%20I%20had%20a%20quick%20question%20about%20the%20program..." 
+        <a id="whatsapp-link" href="https://wa.me/447925116794?text=Hi%20Chris%2C%20I'm%20looking%20at%20the%2014-Day%20Fundamentals.%20I%20had%20a%20quick%20question%20about%20the%20program..." 
            target="_blank" 
-           class="flex items-center justify-center w-14 h-14 bg-brand-sage text-white rounded-full shadow-lg hover:scale-110 transition-transform duration-300 group relative">
-            <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
-            </svg>
+           class="flex items-center group relative">
+            <div id="whatsapp-badge" class="absolute -top-1 -right-1 w-5 h-5 bg-white text-brand-sage rounded-full flex items-center justify-center text-[10px] font-black shadow-lg z-10 border border-brand-sage/20">1</div>
+            
+            <div class="w-14 h-14 bg-brand-sage rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform duration-300 relative whatsapp-glow">
+                <div class="absolute inset-0 rounded-full bg-brand-sage animate-ping opacity-20"></div>
+                <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 448 512">
+                    <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-5.5-2.8-23.2-8.5-44.2-27.1-16.4-14.6-27.4-32.7-30.6-38.2-3.2-5.6-.3-8.6 2.4-11.3 2.5-2.4 5.6-6.5 8.3-9.8 2.8-3.2 3.7-5.5 5.5-9.3 1.9-3.7.9-6.9-.5-9.8-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 13.2 5.8 23.5 9.2 31.5 11.8 13.3 4.2 25.4 3.6 35 2.2 10.7-1.5 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
+                </svg>
+            </div>
         </a>
     </div>
 
@@ -541,22 +572,57 @@
         document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('current-year').textContent = new Date().getFullYear();
 
-            // WhatsApp Scroll Logic
-            let popupTriggered = false;
+            // WhatsApp Advanced Logic
+            const whatsappPopup = document.getElementById('whatsapp-popup');
+            const whatsappBadge = document.getElementById('whatsapp-badge');
+            const closeWhatsapp = document.getElementById('close-whatsapp');
+            let isClosedManually = false;
+
+            // Scroll Logic for Pop-up Trigger (60%)
             window.addEventListener('scroll', () => {
-                if (popupTriggered) return;
-                
                 const winHeight = window.innerHeight;
                 const docHeight = document.documentElement.scrollHeight;
                 const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-                const scrollPercentage = (scrollTop / (docHeight - winHeight)) * 100;
+                const scrollPercent = (scrollTop / (docHeight - winHeight)) * 100;
 
-                // Trigger at 60% scroll
-                if (scrollPercentage > 60) {
-                    const popup = document.getElementById('wa-popup');
-                    popup.classList.remove('hidden');
-                    popupTriggered = true;
+                // Show/Hide logic for the Message bubble
+                if (scrollPercent >= 60 && scrollPercent <= 92 && !isClosedManually) {
+                    whatsappPopup.classList.add('visible');
+                } else {
+                    whatsappPopup.classList.remove('visible');
                 }
+
+                // Logic for the Badge
+                if (scrollPercent >= 60 && scrollPercent <= 98) {
+                    whatsappBadge.classList.add('active');
+                } else {
+                    whatsappBadge.classList.remove('active');
+                }
+            });
+
+            // Swipe dismissal logic
+            let touchStartX = 0;
+            const swipeThreshold = 50;
+
+            whatsappPopup.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            }, { passive: true });
+
+            whatsappPopup.addEventListener('touchend', (e) => {
+                const touchEndX = e.changedTouches[0].screenX;
+                const diffX = touchEndX - touchStartX;
+
+                if (Math.abs(diffX) > swipeThreshold) {
+                    isClosedManually = true;
+                    if (diffX > 0) whatsappPopup.classList.add('swipe-right');
+                    else whatsappPopup.classList.add('swipe-left');
+                }
+            }, { passive: true });
+
+            closeWhatsapp.addEventListener('click', (e) => {
+                e.preventDefault();
+                isClosedManually = true;
+                whatsappPopup.classList.remove('visible');
             });
 
             // Smooth Scroll
@@ -583,8 +649,6 @@
             let currentIndex = 0;
             let startX = 0;
             let isDragging = false;
-            let currentTranslate = 0;
-            let prevTranslate = 0;
 
             // Generate Dots
             slides.forEach((_, i) => {
@@ -623,42 +687,25 @@
                 updateSlider();
             });
 
-            // Touch & Mouse Swipe
-            wrapper.addEventListener('touchstart', touchStart);
-            wrapper.addEventListener('touchend', touchEnd);
-            wrapper.addEventListener('touchmove', touchMove);
-            wrapper.addEventListener('mousedown', touchStart);
-            wrapper.addEventListener('mouseup', touchEnd);
-            wrapper.addEventListener('mouseleave', touchEnd);
-            wrapper.addEventListener('mousemove', touchMove);
-
-            function touchStart(e) {
-                startX = e.type.includes('touch') ? e.touches[0].clientX : e.clientX;
+            // Touch & Mouse Swipe for slider
+            wrapper.addEventListener('touchstart', (e) => {
+                startX = e.touches[0].clientX;
                 isDragging = true;
                 wrapper.style.transition = 'none';
-            }
-
-            function touchMove(e) {
-                if (!isDragging) return;
-                const currentX = e.type.includes('touch') ? e.touches[0].clientX : e.clientX;
-                const diff = currentX - startX;
-                const move = (-currentIndex * wrapper.offsetWidth) + diff;
-                wrapper.style.transform = `translateX(${move}px)`;
-            }
-
-            function touchEnd(e) {
+            });
+            
+            wrapper.addEventListener('touchend', (e) => {
                 if (!isDragging) return;
                 isDragging = false;
                 wrapper.style.transition = 'transform 0.5s ease-out';
-                const endX = e.type.includes('touch') ? e.changedTouches[0].clientX : e.clientX;
+                const endX = e.changedTouches[0].clientX;
                 const diff = endX - startX;
-
                 if (Math.abs(diff) > 50) {
                     if (diff > 0 && currentIndex > 0) currentIndex--;
                     else if (diff < 0 && currentIndex < slides.length - 1) currentIndex++;
                 }
                 updateSlider();
-            }
+            });
         });
     </script>
 </body>
