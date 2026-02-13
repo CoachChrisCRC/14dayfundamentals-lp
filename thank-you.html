@@ -73,48 +73,50 @@
     <div class="bg-blob top-[-10%] left-[-10%]"></div>
     <div class="bg-blob bottom-[10%] right-[-5%]" style="background: radial-gradient(circle, rgba(135, 174, 115, 0.1) 0%, rgba(0, 0, 0, 0) 70%);"></div>
 
-    <div class="max-w-2xl w-full glass-card p-8 sm:p-16 rounded-[3rem] text-center animate-fade">
-        <div class="inline-flex items-center justify-center w-20 h-20 bg-brand-sage/20 rounded-full mb-8">
-            <svg class="w-10 h-10 text-brand-sage" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
-            </svg>
+    <div class="max-w-2xl w-full flex flex-col gap-6 animate-fade">
+        <div class="glass-card p-8 sm:p-16 rounded-[3rem] text-center">
+            <div class="inline-flex items-center justify-center w-20 h-20 bg-brand-sage/20 rounded-full mb-8">
+                <svg class="w-10 h-10 text-brand-sage" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+                </svg>
+            </div>
+
+            <h1 class="text-4xl sm:text-5xl font-black uppercase tracking-tighter mb-4 leading-none">
+                You're <span class="text-brand-sage">In The Queue.</span>
+            </h1>
+            
+            <p class="text-xl text-neutral-400 font-light italic leading-relaxed">
+                I’ve received your details<span id="nameWrapper">, <span id="userName" class="text-white font-bold"></span></span>. When a spot opens up in the next intake, you'll be the first to know. 
+            </p>
+
+            <button 
+                data-tally-open="RG54dp" 
+                data-tally-layout="modal" 
+                data-tally-hide-title="1" 
+                data-tally-emoji-text="🎯" 
+                data-tally-emoji-animation="heart-beat"
+                class="hidden">
+            </button>
         </div>
 
-        <h1 class="text-4xl sm:text-5xl font-black uppercase tracking-tighter mb-4 leading-none">
-            You're <span class="text-brand-sage">In The Queue.</span>
-        </h1>
-        
-        <p class="text-xl text-neutral-400 font-light italic mb-10 leading-relaxed">
-            I’ve received your details<span id="nameWrapper">, <span id="userName" class="text-white font-bold"></span></span>. When a spot opens up in the next intake, you'll be the first to know. 
-        </p>
-
-        <button 
-            data-tally-open="RG54dp" 
-            data-tally-layout="modal" 
-            data-tally-hide-title="1" 
-            data-tally-emoji-text="🎯" 
-            data-tally-emoji-animation="heart-beat"
-            class="hidden">
-        </button>
-
-        <div class="mt-10 mb-10 p-6 sm:p-8 bg-brand-sage/5 border border-brand-sage/20 rounded-3xl text-left">
+        <div class="p-8 sm:p-12 bg-white/[0.02] rounded-[3rem] text-left border border-white/5">
             <div class="flex items-center gap-3 mb-6">
-                <span class="flex h-3 w-3 rounded-full bg-brand-sage animate-pulse"></span>
+                <span class="flex h-2 w-2 rounded-full bg-brand-sage animate-pulse"></span>
                 <span class="text-[10px] font-black uppercase tracking-[0.2em] text-brand-sage leading-none">A little something to get you started</span>
             </div>
             
-            <h3 class="text-xl font-black uppercase tracking-tight mb-4 text-white">First things first: Let's un-rust those hips</h3>
-            <p class="text-sm text-neutral-400 mb-8 leading-relaxed">Try this 60-second move tomorrow morning—it’s the fastest way I know to unlock a stiff back.</p>
+            <h3 class="text-2xl font-black uppercase tracking-tight mb-4 text-white">First things first: Let's un-rust those hips</h3>
+            <p class="text-sm text-neutral-400 mb-10 leading-relaxed max-w-md">Try this 60-second move tomorrow morning—it’s the fastest way I know to unlock a stiff back.</p>
             
-            <div class="space-y-6">
-                <div class="relative pl-6 border-l-2 border-white/10">
-                    <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-neutral-800 border-2 border-neutral-600 flex items-center justify-center text-[8px] font-bold text-neutral-400">1</div>
-                    <h4 class="text-sm font-black uppercase text-white mb-2">Level 1: Quadruped T-Spine Rotation</h4>
+            <div class="space-y-10">
+                <div class="relative pl-8 border-l border-white/10">
+                    <div class="absolute -left-[13px] top-0 w-6 h-6 rounded-full bg-neutral-900 border border-neutral-700 flex items-center justify-center text-[10px] font-bold text-neutral-400">1</div>
+                    <h4 class="text-sm font-black uppercase text-brand-sage mb-3">Level 1: Quadruped T-Spine Rotation</h4>
                     <p class="text-xs text-neutral-400 leading-relaxed">Sit tall on your heels. Place one hand behind your head and the other on the floor. Rotate your elbow toward your opposite wrist, then exhale as you peel your chest open toward the sky. This re-establishes T-Spine rotation and connects your breath to your mid-back mobility.</p>
                 </div>
-                <div class="relative pl-6 border-l-2 border-brand-sage/30">
-                    <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-brand-sage border-2 border-brand-sage/50 flex items-center justify-center text-[8px] font-bold text-white">2</div>
-                    <h4 class="text-sm font-black uppercase text-white mb-2">Level 2: Tactical Frog <br>T-Spine Rotation</h4>
+                <div class="relative pl-8 border-l border-brand-sage/30">
+                    <div class="absolute -left-[13px] top-0 w-6 h-6 rounded-full bg-brand-sage border border-brand-sage/50 flex items-center justify-center text-[10px] font-bold text-white">2</div>
+                    <h4 class="text-sm font-black uppercase text-brand-sage mb-3">Level 2: Tactical Frog <br>T-Spine Rotation</h4>
                     <p class="text-xs text-neutral-400 leading-relaxed">From all fours, slide your knees out wide and sink your hips back. Perform the same T-Spine rotation as Level 1. By "locking" your lower back in this position, we force the rotation into the upper back while simultaneously widening the functional range of your hips.</p>
                 </div>
             </div>
