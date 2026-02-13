@@ -66,6 +66,16 @@
             box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.05), 0 0 20px rgba(135, 174, 115, 0.4);
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
+
+        .success-glow {
+            box-shadow: 0 0 40px 10px rgba(135, 174, 115, 0.15);
+            animation: pulse-glow 3s infinite ease-in-out;
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% { opacity: 0.8; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.05); }
+        }
     </style>
 </head>
 <body class="min-h-screen flex flex-col items-center justify-center p-4 py-12 sm:py-20">
@@ -74,9 +84,9 @@
     <div class="bg-blob bottom-[10%] right-[-5%]" style="background: radial-gradient(circle, rgba(135, 174, 115, 0.1) 0%, rgba(0, 0, 0, 0) 70%);"></div>
 
     <div class="max-w-2xl w-full glass-card p-8 sm:p-16 rounded-[3rem] text-center animate-fade">
-        <div class="inline-flex items-center justify-center w-20 h-20 bg-brand-sage/20 rounded-full mb-8">
+        <div class="inline-flex items-center justify-center w-20 h-20 bg-brand-sage/10 rounded-full mb-8 success-glow border border-brand-sage/20">
             <svg class="w-10 h-10 text-brand-sage" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5M8.25 15l3 3L21.75 4.5" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
             </svg>
         </div>
 
@@ -179,7 +189,7 @@
             
             let isClosedManually = false;
 
-            // POPUP TEXT
+            // RESTORED UPDATED POPUP TEXT
             popupText.textContent = `Thanks for joining${firstName ? ' ' + firstName : ''}! I'd love to know what you're training for. Message me to say hi and ask any questions. I’ll send over those mobility videos too! — Chris`;
 
             // 3. THE CUSTOM PRE-FILLED MESSAGE
@@ -191,7 +201,7 @@
             
             waLink.href = `https://wa.me/447925116794?text=${encodeURIComponent(message)}`;
 
-            // Swipe Dismiss Logic
+            // Restored Swipe Dismiss Logic
             let touchStartX = 0;
             let touchEndX = 0;
 
