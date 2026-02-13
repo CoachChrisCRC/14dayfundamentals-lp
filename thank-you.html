@@ -75,8 +75,8 @@
 
     <div class="max-w-2xl w-full glass-card p-8 sm:p-16 rounded-[3rem] text-center animate-fade">
         <div class="inline-flex items-center justify-center w-20 h-20 bg-brand-sage/20 rounded-full mb-8">
-            <svg class="w-10 h-10 text-brand-sage" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            <svg class="w-10 h-10 text-brand-sage" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5M8.25 15l3 3L21.75 4.5" />
             </svg>
         </div>
 
@@ -179,7 +179,7 @@
             
             let isClosedManually = false;
 
-            // RESTORED UPDATED POPUP TEXT
+            // POPUP TEXT
             popupText.textContent = `Thanks for joining${firstName ? ' ' + firstName : ''}! I'd love to know what you're training for. Message me to say hi and ask any questions. I’ll send over those mobility videos too! — Chris`;
 
             // 3. THE CUSTOM PRE-FILLED MESSAGE
@@ -191,7 +191,7 @@
             
             waLink.href = `https://wa.me/447925116794?text=${encodeURIComponent(message)}`;
 
-            // Restored Swipe Dismiss Logic
+            // Swipe Dismiss Logic
             let touchStartX = 0;
             let touchEndX = 0;
 
